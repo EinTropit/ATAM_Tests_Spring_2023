@@ -1,8 +1,8 @@
 #!/bin/bash
 
-MAX_TEST=10
+MAX_TEST=3
 
-EX_TO_TEST=3
+EX_TO_TEST=0
 
 # single test mode
 SINGLE_TEST_MODE=0
@@ -15,7 +15,7 @@ YELLOW='\033[0;33m'
 NC='\033[0m'
 
 STATUS=0
-FINAL_TEST_STATUS=(false false false false false)
+FINAL_TEST_STATUS=(1 1 1 1 1 1)
 
 if [ $SINGLE_TEST_MODE == 0 ]; then
 	if [ $EX_TO_TEST == 0 ]; then
@@ -48,13 +48,14 @@ if [ $SINGLE_TEST_MODE == 0 ]; then
 				fi
 				rm merged.*
 			done
+			
 			if [ $LOOP_STATUS == 0 ]; then
-				FINAL_TEST_STATUS[i-1]=true
+				FINAL_TEST_STATUS[i]=0
 			fi
 		done
 		
-		for ((i=0; i<5; i++)); do
-			if [ FINAL_TEST_STATUS[i] == true ]; then
+		for ((i=1; i<6; i++)); do
+			if [ ${FINAL_TEST_STATUS[$i]} == 0 ]; then
 				echo -e "ex${i} all tests status: ${GREEN}PASSED${NC}"
 			else
 				echo -e "ex${i} all tests status: (at least one test) ${RED}FAILED${NC}"
@@ -118,4 +119,3 @@ else
 fi
 echo -e "${YELLOW}Terminating runner${NC}"
 exit ${STATUS}
-
