@@ -15,6 +15,7 @@ YELLOW='\033[0;33m'
 NC='\033[0m'
 
 STATUS=0
+FINAL_TEST_STATUS=(false false false false false)
 
 if [ $SINGLE_TEST_MODE == 0 ]; then
 	if [ $EX_TO_TEST == 0 ]; then
@@ -47,10 +48,16 @@ if [ $SINGLE_TEST_MODE == 0 ]; then
 				fi
 				rm merged.*
 			done
-			if [ $LOOP_STATUS == 1 ]; then
-				echo -e "Passed all ex${i} tests? ${RED}NO ):${NC}"
+			if [ $LOOP_STATUS == 0 ]; then
+				FINAL_TEST_STATUS[i-1]=true
+			fi
+		done
+		
+		for ((i=0; i<5; i++)); do
+			if [ FINAL_TEST_STATUS[i] == true ]; then
+				echo -e "ex${i} all tests status: ${GREEN}PASSED${NC}"
 			else
-				echo -e "Passed all ex${i} tests? ${GREEN}YES (:${NC}"
+				echo -e "ex${i} all tests status: (at least one test) ${RED}FAILED${NC}"
 			fi
 		done
 	else
