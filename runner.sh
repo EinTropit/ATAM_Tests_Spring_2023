@@ -9,28 +9,33 @@ NC='\033[0m'
 EXIT_STATUS=0
 FINAL_TEST_STATUS=(1 1 1 1 1 1)
 
-if [[ $1 =~ ^[1-5]$ ]]; then
-
+if [[ $1 =~ ^[1-5]+$ ]]; then 
 	SINGLE_EX_MODE=1
 	EX_BEGIN=$1
-	EX_END=($1 + 1)
+	EX_END=$1
 else
 	SINGLE_EX_MODE=0
 	EX_BEGIN=1
-	EX_END=6
+	EX_END=5
 fi
 
-if [[ $2 =~ ^[1-$MAX_TEST]$ ]]; then
-	TEST_BEGIN=$2
-	TEST_END=($2 + 1)
+if [ -z "$2" ]; then
+	TEMP=0
 else
-	TEST_BEGIN=0
-	TEST_END=($MAX_TEST + 1)
+	TEMP=$2
 fi
 
-for ((i=$EX_BEGIN; i<$EX_END; i++)); do
+if (( "$TEMP" >= 1 && "$TEMP" <= $MAX_TEST )); then
+	TEST_BEGIN=$2
+	TEST_END=$2
+else
+	TEST_BEGIN=1
+	TEST_END=$MAX_TEST
+fi
+
+for ((i=$EX_BEGIN; i<=$EX_END; i++)); do
 	STATUS=0
-	for ((j=$TEST_BEGIN; j<$TEST_END; j++)); do 
+	for ((j=$TEST_BEGIN; j<=$TEST_END; j++)); do 
 		as "ex${i}.asm" "../ATAM_tests/ex${i}/ex${i}test${j}" -o merged.o
 
 		if [ -f "merged.o" ]; then
@@ -60,7 +65,7 @@ for ((i=$EX_BEGIN; i<$EX_END; i++)); do
 	fi
 done
 
-if [ $SINGLE_EX_MODE == 1 ]; then
+if [ $SINGLE_EX_MODE == 0 ]; then
 	for ((i=1; i<6; i++)); do
 		if [ ${FINAL_TEST_STATUS[$i]} == 0 ]; then
 			echo -e "ex${i} all tests status: ${GREEN}PASSED${NC}"
