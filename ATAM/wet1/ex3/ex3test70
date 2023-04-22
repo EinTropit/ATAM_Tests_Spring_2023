@@ -1,0 +1,96 @@
+.global _start
+
+  .section .text
+
+  mov $mergedArray, %rax
+  cmpl $94, 0(%rax)
+  jne bad_exit
+  cmpl $88, 4(%rax)
+  jne bad_exit
+  cmpl $87, 8(%rax)
+  jne bad_exit
+  cmpl $85, 12(%rax)
+  jne bad_exit
+  cmpl $81, 16(%rax)
+  jne bad_exit
+  cmpl $80, 20(%rax)
+  jne bad_exit
+  cmpl $75, 24(%rax)
+  jne bad_exit
+  cmpl $74, 28(%rax)
+  jne bad_exit
+  cmpl $72, 32(%rax)
+  jne bad_exit
+  cmpl $69, 36(%rax)
+  jne bad_exit
+  cmpl $67, 40(%rax)
+  jne bad_exit
+  cmpl $62, 44(%rax)
+  jne bad_exit
+  cmpl $61, 48(%rax)
+  jne bad_exit
+  cmpl $56, 52(%rax)
+  jne bad_exit
+  cmpl $53, 56(%rax)
+  jne bad_exit
+  cmpl $48, 60(%rax)
+  jne bad_exit
+  cmpl $46, 64(%rax)
+  jne bad_exit
+  cmpl $45, 68(%rax)
+  jne bad_exit
+  cmpl $44, 72(%rax)
+  jne bad_exit
+  cmpl $43, 76(%rax)
+  jne bad_exit
+  cmpl $40, 80(%rax)
+  jne bad_exit
+  cmpl $39, 84(%rax)
+  jne bad_exit
+  cmpl $36, 88(%rax)
+  jne bad_exit
+  cmpl $34, 92(%rax)
+  jne bad_exit
+  cmpl $33, 96(%rax)
+  jne bad_exit
+  cmpl $32, 100(%rax)
+  jne bad_exit
+  cmpl $28, 104(%rax)
+  jne bad_exit
+  cmpl $21, 108(%rax)
+  jne bad_exit
+  cmpl $19, 112(%rax)
+  jne bad_exit
+  cmpl $15, 116(%rax)
+  jne bad_exit
+  cmpl $14, 120(%rax)
+  jne bad_exit
+  cmpl $10, 124(%rax)
+  jne bad_exit
+  cmpl $9, 128(%rax)
+  jne bad_exit
+  cmpl $8, 132(%rax)
+  jne bad_exit
+  cmpl $7, 136(%rax)
+  jne bad_exit
+  cmpl $6, 140(%rax)
+  jne bad_exit
+  cmpl $2, 144(%rax)
+  jne bad_exit
+  cmpl $0, 148(%rax)
+  jne bad_exit
+
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+  array1: .int 32,0
+  array2: .int 94,94,88,87,85,81,81,80,75,74,72,69,67,62,61,56,56,53,48,46,45,44,43,40,40,39,36,34,33,32,28,21,19,19,15,14,14,14,10,9,9,8,7,7,6,2,2,0
+  mergedArray: .zero 38
+

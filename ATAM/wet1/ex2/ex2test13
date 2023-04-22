@@ -1,0 +1,117 @@
+.global _start
+
+  .section .text
+
+  mov $destination, %rax
+  cmpb $129, 0(%rax)
+  jne bad_exit
+  cmpb $99, 1(%rax)
+  jne bad_exit
+  cmpb $129, 2(%rax)
+  jne bad_exit
+  cmpb $95, 3(%rax)
+  jne bad_exit
+  cmpb $178, 4(%rax)
+  jne bad_exit
+  cmpb $136, 5(%rax)
+  jne bad_exit
+  cmpb $160, 6(%rax)
+  jne bad_exit
+  cmpb $246, 7(%rax)
+  jne bad_exit
+  cmpb $127, 8(%rax)
+  jne bad_exit
+  cmpb $75, 9(%rax)
+  jne bad_exit
+  cmpb $176, 10(%rax)
+  jne bad_exit
+  cmpb $121, 11(%rax)
+  jne bad_exit
+  cmpb $175, 12(%rax)
+  jne bad_exit
+  cmpb $217, 13(%rax)
+  jne bad_exit
+  cmpb $139, 14(%rax)
+  jne bad_exit
+  cmpb $173, 15(%rax)
+  jne bad_exit
+  cmpb $162, 16(%rax)
+  jne bad_exit
+  cmpb $162, 17(%rax)
+  jne bad_exit
+  cmpb $245, 18(%rax)
+  jne bad_exit
+  cmpb $22, 19(%rax)
+  jne bad_exit
+  cmpb $75, 20(%rax)
+  jne bad_exit
+  cmpb $231, 21(%rax)
+  jne bad_exit
+  cmpb $226, 22(%rax)
+  jne bad_exit
+  cmpb $88, 23(%rax)
+  jne bad_exit
+  cmpb $194, 24(%rax)
+  jne bad_exit
+  cmpb $154, 25(%rax)
+  jne bad_exit
+  cmpb $190, 26(%rax)
+  jne bad_exit
+  cmpb $199, 27(%rax)
+  jne bad_exit
+  cmpb $116, 28(%rax)
+  jne bad_exit
+  cmpb $179, 29(%rax)
+  jne bad_exit
+  cmpb $187, 30(%rax)
+  jne bad_exit
+  cmpb $7, 31(%rax)
+  jne bad_exit
+  cmpb $68, 32(%rax)
+  jne bad_exit
+  cmpb $120, 33(%rax)
+  jne bad_exit
+  cmpb $242, 34(%rax)
+  jne bad_exit
+  cmpb $175, 35(%rax)
+  jne bad_exit
+  cmpb $29, 36(%rax)
+  jne bad_exit
+  cmpb $54, 37(%rax)
+  jne bad_exit
+  cmpb $147, 38(%rax)
+  jne bad_exit
+  cmpb $132, 39(%rax)
+  jne bad_exit
+  cmpb $239, 40(%rax)
+  jne bad_exit
+  cmpb $121, 41(%rax)
+  jne bad_exit
+  cmpb $253, 42(%rax)
+  jne bad_exit
+  cmpb $34, 43(%rax)
+  jne bad_exit
+  cmpb $200, 44(%rax)
+  jne bad_exit
+  cmpb $38, 45(%rax)
+  jne bad_exit
+  cmpb $2, 46(%rax)
+  jne bad_exit
+
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+  num: .int 46
+  source: .byte 129,99,129,95,178,136,160,246,127,75,176,121,175,217,139,173,162,162,245,22,75,231,226,88,194,154,190,199,116,179,187,7,68,120,242,175,29,54,147,132,239,121,253,34,200,38,0
+  destination:
+              .zero 46
+              .byte 2
+
+

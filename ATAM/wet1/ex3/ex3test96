@@ -1,0 +1,106 @@
+.global _start
+
+  .section .text
+
+  mov $mergedArray, %rax
+  cmpl $100, 0(%rax)
+  jne bad_exit
+  cmpl $96, 4(%rax)
+  jne bad_exit
+  cmpl $94, 8(%rax)
+  jne bad_exit
+  cmpl $91, 12(%rax)
+  jne bad_exit
+  cmpl $89, 16(%rax)
+  jne bad_exit
+  cmpl $85, 20(%rax)
+  jne bad_exit
+  cmpl $83, 24(%rax)
+  jne bad_exit
+  cmpl $81, 28(%rax)
+  jne bad_exit
+  cmpl $77, 32(%rax)
+  jne bad_exit
+  cmpl $76, 36(%rax)
+  jne bad_exit
+  cmpl $75, 40(%rax)
+  jne bad_exit
+  cmpl $73, 44(%rax)
+  jne bad_exit
+  cmpl $68, 48(%rax)
+  jne bad_exit
+  cmpl $67, 52(%rax)
+  jne bad_exit
+  cmpl $64, 56(%rax)
+  jne bad_exit
+  cmpl $63, 60(%rax)
+  jne bad_exit
+  cmpl $59, 64(%rax)
+  jne bad_exit
+  cmpl $56, 68(%rax)
+  jne bad_exit
+  cmpl $54, 72(%rax)
+  jne bad_exit
+  cmpl $52, 76(%rax)
+  jne bad_exit
+  cmpl $49, 80(%rax)
+  jne bad_exit
+  cmpl $48, 84(%rax)
+  jne bad_exit
+  cmpl $45, 88(%rax)
+  jne bad_exit
+  cmpl $44, 92(%rax)
+  jne bad_exit
+  cmpl $42, 96(%rax)
+  jne bad_exit
+  cmpl $40, 100(%rax)
+  jne bad_exit
+  cmpl $39, 104(%rax)
+  jne bad_exit
+  cmpl $37, 108(%rax)
+  jne bad_exit
+  cmpl $34, 112(%rax)
+  jne bad_exit
+  cmpl $33, 116(%rax)
+  jne bad_exit
+  cmpl $29, 120(%rax)
+  jne bad_exit
+  cmpl $27, 124(%rax)
+  jne bad_exit
+  cmpl $24, 128(%rax)
+  jne bad_exit
+  cmpl $21, 132(%rax)
+  jne bad_exit
+  cmpl $16, 136(%rax)
+  jne bad_exit
+  cmpl $12, 140(%rax)
+  jne bad_exit
+  cmpl $11, 144(%rax)
+  jne bad_exit
+  cmpl $9, 148(%rax)
+  jne bad_exit
+  cmpl $7, 152(%rax)
+  jne bad_exit
+  cmpl $6, 156(%rax)
+  jne bad_exit
+  cmpl $3, 160(%rax)
+  jne bad_exit
+  cmpl $1, 164(%rax)
+  jne bad_exit
+  cmpl $0, 168(%rax)
+  jne bad_exit
+
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+  array1: .int 100,94,91,89,85,83,81,77,76,76,75,73,73,68,68,68,67,64,63,59,59,56,54,54,52,49,48,45,44,42,40,37,34,33,29,27,24,21,12,11,9,7,6,6,3,1,1,0
+  array2: .int 100,96,39,16,0
+  mergedArray: .zero 43
+

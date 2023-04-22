@@ -1,0 +1,112 @@
+.global _start
+
+  .section .text
+
+  mov $mergedArray, %rax
+  cmpl $98, 0(%rax)
+  jne bad_exit
+  cmpl $96, 4(%rax)
+  jne bad_exit
+  cmpl $94, 8(%rax)
+  jne bad_exit
+  cmpl $93, 12(%rax)
+  jne bad_exit
+  cmpl $92, 16(%rax)
+  jne bad_exit
+  cmpl $88, 20(%rax)
+  jne bad_exit
+  cmpl $84, 24(%rax)
+  jne bad_exit
+  cmpl $83, 28(%rax)
+  jne bad_exit
+  cmpl $82, 32(%rax)
+  jne bad_exit
+  cmpl $81, 36(%rax)
+  jne bad_exit
+  cmpl $80, 40(%rax)
+  jne bad_exit
+  cmpl $74, 44(%rax)
+  jne bad_exit
+  cmpl $73, 48(%rax)
+  jne bad_exit
+  cmpl $72, 52(%rax)
+  jne bad_exit
+  cmpl $71, 56(%rax)
+  jne bad_exit
+  cmpl $70, 60(%rax)
+  jne bad_exit
+  cmpl $68, 64(%rax)
+  jne bad_exit
+  cmpl $66, 68(%rax)
+  jne bad_exit
+  cmpl $65, 72(%rax)
+  jne bad_exit
+  cmpl $64, 76(%rax)
+  jne bad_exit
+  cmpl $61, 80(%rax)
+  jne bad_exit
+  cmpl $59, 84(%rax)
+  jne bad_exit
+  cmpl $57, 88(%rax)
+  jne bad_exit
+  cmpl $56, 92(%rax)
+  jne bad_exit
+  cmpl $55, 96(%rax)
+  jne bad_exit
+  cmpl $50, 100(%rax)
+  jne bad_exit
+  cmpl $48, 104(%rax)
+  jne bad_exit
+  cmpl $46, 108(%rax)
+  jne bad_exit
+  cmpl $45, 112(%rax)
+  jne bad_exit
+  cmpl $44, 116(%rax)
+  jne bad_exit
+  cmpl $41, 120(%rax)
+  jne bad_exit
+  cmpl $35, 124(%rax)
+  jne bad_exit
+  cmpl $33, 128(%rax)
+  jne bad_exit
+  cmpl $32, 132(%rax)
+  jne bad_exit
+  cmpl $31, 136(%rax)
+  jne bad_exit
+  cmpl $30, 140(%rax)
+  jne bad_exit
+  cmpl $23, 144(%rax)
+  jne bad_exit
+  cmpl $22, 148(%rax)
+  jne bad_exit
+  cmpl $20, 152(%rax)
+  jne bad_exit
+  cmpl $18, 156(%rax)
+  jne bad_exit
+  cmpl $13, 160(%rax)
+  jne bad_exit
+  cmpl $10, 164(%rax)
+  jne bad_exit
+  cmpl $7, 168(%rax)
+  jne bad_exit
+  cmpl $6, 172(%rax)
+  jne bad_exit
+  cmpl $3, 176(%rax)
+  jne bad_exit
+  cmpl $0, 180(%rax)
+  jne bad_exit
+
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+  array1: .int 98,96,94,93,92,84,82,81,81,74,73,72,71,61,59,56,55,48,48,46,45,44,33,32,23,18,13,7,6,0
+  array2: .int 98,88,83,80,74,74,70,68,66,65,64,57,55,50,45,41,35,31,30,22,20,20,10,3,0
+  mergedArray: .zero 46
+

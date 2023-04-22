@@ -1,0 +1,159 @@
+.global _start
+
+  .section .text
+
+  movq $node_0, %rax
+  cmpq $753, (%rax)
+  jne bad_exit
+  cmpq $node_2, 8(%rax)
+  jne bad_exit
+  cmpq $node_1, 16(%rax)
+  jne bad_exit
+
+  movq $node_2, %rax
+  cmpq $452, (%rax)
+  jne bad_exit
+  cmpq $node_4, 8(%rax)
+  jne bad_exit
+  cmpq $node_3, 16(%rax)
+  jne bad_exit
+
+  movq $node_4, %rax
+  cmpq $196, (%rax)
+  jne bad_exit
+  cmpq $node_8, 8(%rax)
+  jne bad_exit
+  cmpq $node_5, 16(%rax)
+  jne bad_exit
+
+  movq $node_8, %rax
+  cmpq $94, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $node_9, 16(%rax)
+  jne bad_exit
+
+  movq $node_9, %rax
+  cmpq $113, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_5, %rax
+  cmpq $392, (%rax)
+  jne bad_exit
+  cmpq $node_7, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_7, %rax
+  cmpq $333, (%rax)
+  jne bad_exit
+  cmpq $node_10, 8(%rax)
+  jne bad_exit
+  cmpq $new_node, 16(%rax)
+  jne bad_exit
+
+  movq $node_10, %rax
+  cmpq $274, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $new_node, %rax
+  cmpq $370, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_3, %rax
+  cmpq $664, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_1, %rax
+  cmpq $935, (%rax)
+  jne bad_exit
+  cmpq $node_6, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_6, %rax
+  cmpq $836, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+  root: .quad node_0
+  node_0:
+            .quad 753
+            .quad node_2
+            .quad node_1
+  node_2:
+            .quad 452
+            .quad node_4
+            .quad node_3
+  node_4:
+            .quad 196
+            .quad node_8
+            .quad node_5
+  node_8:
+            .quad 94
+            .quad 0
+            .quad node_9
+  node_9:
+            .quad 113
+            .quad 0
+            .quad 0
+  node_5:
+            .quad 392
+            .quad node_7
+            .quad 0
+  node_7:
+            .quad 333
+            .quad node_10
+            .quad 0
+  node_10:
+            .quad 274
+            .quad 0
+            .quad 0
+  node_3:
+            .quad 664
+            .quad 0
+            .quad 0
+  node_1:
+            .quad 935
+            .quad node_6
+            .quad 0
+  node_6:
+            .quad 836
+            .quad 0
+            .quad 0
+  new_node: .quad 370, 0, 0
+
+

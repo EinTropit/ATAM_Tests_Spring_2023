@@ -1,0 +1,315 @@
+.global _start
+
+  .section .text
+
+  movq $node_0, %rax
+  cmpq $669, (%rax)
+  jne bad_exit
+  cmpq $node_1, 8(%rax)
+  jne bad_exit
+  cmpq $node_7, 16(%rax)
+  jne bad_exit
+
+  movq $node_1, %rax
+  cmpq $266, (%rax)
+  jne bad_exit
+  cmpq $node_2, 8(%rax)
+  jne bad_exit
+  cmpq $node_6, 16(%rax)
+  jne bad_exit
+
+  movq $node_2, %rax
+  cmpq $26, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $node_3, 16(%rax)
+  jne bad_exit
+
+  movq $node_3, %rax
+  cmpq $98, (%rax)
+  jne bad_exit
+  cmpq $node_4, 8(%rax)
+  jne bad_exit
+  cmpq $node_5, 16(%rax)
+  jne bad_exit
+
+  movq $node_4, %rax
+  cmpq $84, (%rax)
+  jne bad_exit
+  cmpq $node_13, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_13, %rax
+  cmpq $37, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_5, %rax
+  cmpq $147, (%rax)
+  jne bad_exit
+  cmpq $node_14, 8(%rax)
+  jne bad_exit
+  cmpq $node_19, 16(%rax)
+  jne bad_exit
+
+  movq $node_14, %rax
+  cmpq $102, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_19, %rax
+  cmpq $252, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_6, %rax
+  cmpq $333, (%rax)
+  jne bad_exit
+  cmpq $node_23, 8(%rax)
+  jne bad_exit
+  cmpq $node_15, 16(%rax)
+  jne bad_exit
+
+  movq $node_23, %rax
+  cmpq $270, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_15, %rax
+  cmpq $368, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $node_18, 16(%rax)
+  jne bad_exit
+
+  movq $node_18, %rax
+  cmpq $528, (%rax)
+  jne bad_exit
+  cmpq $node_20, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_20, %rax
+  cmpq $395, (%rax)
+  jne bad_exit
+  cmpq $node_22, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_22, %rax
+  cmpq $394, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_7, %rax
+  cmpq $708, (%rax)
+  jne bad_exit
+  cmpq $new_node, 8(%rax)
+  jne bad_exit
+  cmpq $node_8, 16(%rax)
+  jne bad_exit
+
+  movq $new_node, %rax
+  cmpq $671, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_8, %rax
+  cmpq $834, (%rax)
+  jne bad_exit
+  cmpq $node_11, 8(%rax)
+  jne bad_exit
+  cmpq $node_9, 16(%rax)
+  jne bad_exit
+
+  movq $node_11, %rax
+  cmpq $765, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_9, %rax
+  cmpq $934, (%rax)
+  jne bad_exit
+  cmpq $node_16, 8(%rax)
+  jne bad_exit
+  cmpq $node_10, 16(%rax)
+  jne bad_exit
+
+  movq $node_16, %rax
+  cmpq $917, (%rax)
+  jne bad_exit
+  cmpq $node_17, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_17, %rax
+  cmpq $892, (%rax)
+  jne bad_exit
+  cmpq $node_21, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_21, %rax
+  cmpq $873, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_10, %rax
+  cmpq $958, (%rax)
+  jne bad_exit
+  cmpq $node_12, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+  movq $node_12, %rax
+  cmpq $948, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+  cmpq $0, 16(%rax)
+  jne bad_exit
+
+
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+  root: .quad node_0
+  node_0:
+            .quad 669
+            .quad node_1
+            .quad node_7
+  node_1:
+            .quad 266
+            .quad node_2
+            .quad node_6
+  node_2:
+            .quad 26
+            .quad 0
+            .quad node_3
+  node_3:
+            .quad 98
+            .quad node_4
+            .quad node_5
+  node_4:
+            .quad 84
+            .quad node_13
+            .quad 0
+  node_13:
+            .quad 37
+            .quad 0
+            .quad 0
+  node_5:
+            .quad 147
+            .quad node_14
+            .quad node_19
+  node_14:
+            .quad 102
+            .quad 0
+            .quad 0
+  node_19:
+            .quad 252
+            .quad 0
+            .quad 0
+  node_6:
+            .quad 333
+            .quad node_23
+            .quad node_15
+  node_23:
+            .quad 270
+            .quad 0
+            .quad 0
+  node_15:
+            .quad 368
+            .quad 0
+            .quad node_18
+  node_18:
+            .quad 528
+            .quad node_20
+            .quad 0
+  node_20:
+            .quad 395
+            .quad node_22
+            .quad 0
+  node_22:
+            .quad 394
+            .quad 0
+            .quad 0
+  node_7:
+            .quad 708
+            .quad 0
+            .quad node_8
+  node_8:
+            .quad 834
+            .quad node_11
+            .quad node_9
+  node_11:
+            .quad 765
+            .quad 0
+            .quad 0
+  node_9:
+            .quad 934
+            .quad node_16
+            .quad node_10
+  node_16:
+            .quad 917
+            .quad node_17
+            .quad 0
+  node_17:
+            .quad 892
+            .quad node_21
+            .quad 0
+  node_21:
+            .quad 873
+            .quad 0
+            .quad 0
+  node_10:
+            .quad 958
+            .quad node_12
+            .quad 0
+  node_12:
+            .quad 948
+            .quad 0
+            .quad 0
+  new_node: .quad 671, 0, 0
+
+

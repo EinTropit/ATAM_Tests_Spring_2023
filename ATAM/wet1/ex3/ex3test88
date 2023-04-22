@@ -1,0 +1,118 @@
+.global _start
+
+  .section .text
+
+  mov $mergedArray, %rax
+  cmpl $99, 0(%rax)
+  jne bad_exit
+  cmpl $98, 4(%rax)
+  jne bad_exit
+  cmpl $96, 8(%rax)
+  jne bad_exit
+  cmpl $95, 12(%rax)
+  jne bad_exit
+  cmpl $94, 16(%rax)
+  jne bad_exit
+  cmpl $91, 20(%rax)
+  jne bad_exit
+  cmpl $89, 24(%rax)
+  jne bad_exit
+  cmpl $88, 28(%rax)
+  jne bad_exit
+  cmpl $82, 32(%rax)
+  jne bad_exit
+  cmpl $81, 36(%rax)
+  jne bad_exit
+  cmpl $80, 40(%rax)
+  jne bad_exit
+  cmpl $76, 44(%rax)
+  jne bad_exit
+  cmpl $75, 48(%rax)
+  jne bad_exit
+  cmpl $72, 52(%rax)
+  jne bad_exit
+  cmpl $65, 56(%rax)
+  jne bad_exit
+  cmpl $64, 60(%rax)
+  jne bad_exit
+  cmpl $60, 64(%rax)
+  jne bad_exit
+  cmpl $59, 68(%rax)
+  jne bad_exit
+  cmpl $58, 72(%rax)
+  jne bad_exit
+  cmpl $57, 76(%rax)
+  jne bad_exit
+  cmpl $54, 80(%rax)
+  jne bad_exit
+  cmpl $52, 84(%rax)
+  jne bad_exit
+  cmpl $50, 88(%rax)
+  jne bad_exit
+  cmpl $48, 92(%rax)
+  jne bad_exit
+  cmpl $47, 96(%rax)
+  jne bad_exit
+  cmpl $46, 100(%rax)
+  jne bad_exit
+  cmpl $44, 104(%rax)
+  jne bad_exit
+  cmpl $42, 108(%rax)
+  jne bad_exit
+  cmpl $41, 112(%rax)
+  jne bad_exit
+  cmpl $40, 116(%rax)
+  jne bad_exit
+  cmpl $39, 120(%rax)
+  jne bad_exit
+  cmpl $38, 124(%rax)
+  jne bad_exit
+  cmpl $36, 128(%rax)
+  jne bad_exit
+  cmpl $35, 132(%rax)
+  jne bad_exit
+  cmpl $34, 136(%rax)
+  jne bad_exit
+  cmpl $32, 140(%rax)
+  jne bad_exit
+  cmpl $31, 144(%rax)
+  jne bad_exit
+  cmpl $28, 148(%rax)
+  jne bad_exit
+  cmpl $25, 152(%rax)
+  jne bad_exit
+  cmpl $23, 156(%rax)
+  jne bad_exit
+  cmpl $22, 160(%rax)
+  jne bad_exit
+  cmpl $21, 164(%rax)
+  jne bad_exit
+  cmpl $20, 168(%rax)
+  jne bad_exit
+  cmpl $17, 172(%rax)
+  jne bad_exit
+  cmpl $16, 176(%rax)
+  jne bad_exit
+  cmpl $13, 180(%rax)
+  jne bad_exit
+  cmpl $11, 184(%rax)
+  jne bad_exit
+  cmpl $7, 188(%rax)
+  jne bad_exit
+  cmpl $0, 192(%rax)
+  jne bad_exit
+
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+  array1: .int 99,98,96,91,88,82,81,80,76,72,64,60,59,57,52,50,50,48,48,46,44,41,40,38,36,36,35,34,32,32,31,23,21,20,17,16,13,11,7,7,0
+  array2: .int 98,98,95,94,91,89,76,76,75,65,58,54,47,44,42,41,39,31,28,25,22,17,7,0
+  mergedArray: .zero 49
+

@@ -1,0 +1,50 @@
+.global _start
+
+  .section .text
+
+  cmpq $73, (node_0)
+  jne bad_exit
+  cmpq $476, (node_1)
+  jne bad_exit
+  cmpq $341, (node_2)
+  jne bad_exit
+  cmpq $98, (node_3)
+  jne bad_exit
+  cmpq $295, (node_4)
+  jne bad_exit
+  cmpq $526, (node_5)
+  jne bad_exit
+
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+  head: .quad node_0
+  node_0:
+          .quad 73
+          .quad node_1
+  node_1:
+          .quad 476
+          .quad node_2
+  node_2:
+          .quad 341
+          .quad node_3
+  node_3:
+          .quad 98
+          .quad node_4
+  node_4:
+          .quad 295
+          .quad node_5
+  node_5:
+          .quad 526
+          .quad 0
+  Source: .quad node_4
+  Value: .quad 295
+
+

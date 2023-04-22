@@ -1,0 +1,21 @@
+.global _start
+
+  .section .text
+
+  mov $Bool, %rax
+  cmpb $41, (%rax)
+  jne bad_exit
+
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+  num: .quad 0xabbfbfdfe7c8414e
+  Bool: .byte 0
+

@@ -1,0 +1,50 @@
+.global _start
+
+  .section .text
+
+  mov $mergedArray, %rax
+  cmpl $100, 0(%rax)
+  jne bad_exit
+  cmpl $98, 4(%rax)
+  jne bad_exit
+  cmpl $91, 8(%rax)
+  jne bad_exit
+  cmpl $86, 12(%rax)
+  jne bad_exit
+  cmpl $83, 16(%rax)
+  jne bad_exit
+  cmpl $79, 20(%rax)
+  jne bad_exit
+  cmpl $76, 24(%rax)
+  jne bad_exit
+  cmpl $49, 28(%rax)
+  jne bad_exit
+  cmpl $47, 32(%rax)
+  jne bad_exit
+  cmpl $39, 36(%rax)
+  jne bad_exit
+  cmpl $28, 40(%rax)
+  jne bad_exit
+  cmpl $15, 44(%rax)
+  jne bad_exit
+  cmpl $10, 48(%rax)
+  jne bad_exit
+  cmpl $4, 52(%rax)
+  jne bad_exit
+  cmpl $0, 56(%rax)
+  jne bad_exit
+
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+  array1: .int 98,86,79,47,4,0
+  array2: .int 100,91,83,76,49,39,28,15,10,0
+  mergedArray: .zero 15
+
