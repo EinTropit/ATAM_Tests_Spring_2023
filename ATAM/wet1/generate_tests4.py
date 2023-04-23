@@ -7,8 +7,89 @@ import os
 NUM_TEST = 20
 REP_NUM = 5
 
-MAX_ARR_SIZE = 10
+MAX_ARR_SIZE = 50
 MAX_ARR_DATA = 1000
+
+
+class LinkedList:
+    staticIdx = 0
+    last = -1
+
+    def __init__(self, val=None):
+        self.val = val
+        self.next = None
+        self.prev = None
+        if val is not None:
+            # self.idx = LinkedList.staticIdx
+            self.name = f"node_{LinkedList.staticIdx}"
+            LinkedList.staticIdx += 1
+        else:
+            self.idx = -1
+            self.name = "head"
+            LinkedList.last = self
+
+    def insert(self, val):
+        newNode = LinkedList(val)
+        LinkedList.last.next = newNode
+        newNode.prev = LinkedList.last
+        LinkedList.last = newNode
+
+    def find_by_idx(self, index):
+        if self.name == f"node_{index}":
+            return self
+        if self.next is None:
+            return None
+        return self.next.find_by_idx(index)
+
+    def find_value(self, val):
+        if self.val == val:
+            return self
+        if self.next is None:
+            return None
+        return self.next.find_value(val)
+
+    def swap(self, source_idx, val):
+        source_node = self.find_by_idx(source_idx)
+        val_node = self.find_value(val)
+
+        if (val_node is not None) and (source_node is not None):
+            temp = source_node.val
+            source_node.val = val_node.val
+            val_node.val = temp
+
+    def listData(self):
+        dataT = ""
+        dataT += f"  {self.name}:\n"
+        if self.val is not None:
+            dataT += f"            .quad {self.val}\n"
+        if self.next is not None:
+            dataT += f"            .quad {self.next.name}\n"
+        else:
+            dataT += f"            .quad 0\n"
+
+        if self.next is not None:
+            dataT += self.next.listData()
+        return dataT
+
+    def listCmps(self):
+        cmpsT = ""
+        disp = 0
+        cmpsT += f"  movq ${self.name}, %rax\n"
+        if self.val is not None:
+            cmpsT += f"  cmpq ${self.val}, (%rax)\n"
+            cmpsT += "  jne bad_exit\n"
+            disp = 8
+        if self.next is not None:
+            cmpsT += f"  cmpq ${self.next.name}, {disp}(%rax)\n"
+        else:
+            cmpsT += f"  cmpq $0, {disp}(%rax)\n"
+        cmpsT += "  jne bad_exit\n"
+        cmpsT += "\n"
+
+        if self.next is not None:
+            cmpsT += self.next.listCmps()
+        return cmpsT
+
 
 intro = ".global _start\n\n  .section .text\n\n"
 exits = "  movq $60, %rax\n  movq $0, %rdi\n  syscall\n\n"
@@ -22,13 +103,17 @@ for m in range(REP_NUM):
         data = ".section .data\n"
         cmps = ""
 
+        LinkedList.staticIdx = 0
         size = random.randint(1, MAX_ARR_SIZE)
-
+        lList = LinkedList()
         myList = []
 
         for j in range(size):
             x = random.randint(1, MAX_ARR_DATA)
             myList.append(x)
+            lList.insert(x)
+
+        data += lList.listData()
 
         source = random.randint(0, len(myList)-1)
         value = random.randint(MAX_ARR_DATA+1, 2*MAX_ARR_DATA)
@@ -38,28 +123,17 @@ for m in range(REP_NUM):
             value = random.choice(myList)
             idx = myList.index(value)
 
-        data += "  head: .quad node_0\n"
-        for j in range(len(myList)):
-            data += f"  node_{j}:\n          .quad {myList[j]}\n"
-            if j < len(myList)-1:
-                data += f"          .quad node_{j+1}\n"
-            else:
-                data += "          .quad 0\n"
-
-            # cmps += f"  mov $node_{j}, %rax\n"
-            if j == idx:
-                cmps += f"  cmpq ${myList[source]}, (node_{j})\n"
-            elif (idx >= 0) and (j == source):
-                cmps += f"  cmpq ${myList[idx]}, (node_{j})\n"
-            else:
-                cmps += f"  cmpq ${myList[j]}, (node_{j})\n"
-            cmps += "  jne bad_exit\n"
-
         data += f"  Source: .quad node_{source}\n"
-        data += f"  Value: .quad {value}\n"
+        data += f"  val: .int {value}\n"
 
+        lList.swap(source, value)
+        cmps += lList.listCmps()
         cmps += "\n"
 
         f_test.write(intro + cmps + exits + data + "\n\n")
 
         f_test.close()
+
+
+
+

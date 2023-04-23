@@ -2,26 +2,28 @@
 
   .section .text
 
-  cmpq $735, (node_0)
+  movq $head, %rax
+  cmpq $node_0, 0(%rax)
   jne bad_exit
-  cmpq $144, (node_1)
+
+  movq $node_0, %rax
+  cmpq $397, (%rax)
   jne bad_exit
-  cmpq $920, (node_2)
+  cmpq $node_1, 8(%rax)
   jne bad_exit
-  cmpq $891, (node_3)
+
+  movq $node_1, %rax
+  cmpq $518, (%rax)
   jne bad_exit
-  cmpq $845, (node_4)
+  cmpq $node_2, 8(%rax)
   jne bad_exit
-  cmpq $563, (node_5)
+
+  movq $node_2, %rax
+  cmpq $190, (%rax)
   jne bad_exit
-  cmpq $268, (node_6)
+  cmpq $0, 8(%rax)
   jne bad_exit
-  cmpq $698, (node_7)
-  jne bad_exit
-  cmpq $811, (node_8)
-  jne bad_exit
-  cmpq $922, (node_9)
-  jne bad_exit
+
 
   movq $60, %rax
   movq $0, %rdi
@@ -33,38 +35,18 @@ bad_exit:
   syscall
 
 .section .data
-  head: .quad node_0
+  head:
+            .quad node_0
   node_0:
-          .quad 735
-          .quad node_1
+            .quad 397
+            .quad node_1
   node_1:
-          .quad 144
-          .quad node_2
+            .quad 518
+            .quad node_2
   node_2:
-          .quad 920
-          .quad node_3
-  node_3:
-          .quad 891
-          .quad node_4
-  node_4:
-          .quad 845
-          .quad node_5
-  node_5:
-          .quad 563
-          .quad node_6
-  node_6:
-          .quad 268
-          .quad node_7
-  node_7:
-          .quad 698
-          .quad node_8
-  node_8:
-          .quad 811
-          .quad node_9
-  node_9:
-          .quad 922
-          .quad 0
-  Source: .quad node_3
-  Value: .quad 1229
+            .quad 190
+            .quad 0
+  Source: .quad node_0
+  val: .int 1547
 
 

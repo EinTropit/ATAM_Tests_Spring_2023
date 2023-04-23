@@ -2,24 +2,64 @@
 
   .section .text
 
-  cmpq $473, (node_0)
+  movq $head, %rax
+  cmpq $node_0, 0(%rax)
   jne bad_exit
-  cmpq $13, (node_1)
+
+  movq $node_0, %rax
+  cmpq $634, (%rax)
   jne bad_exit
-  cmpq $887, (node_2)
+  cmpq $node_1, 8(%rax)
   jne bad_exit
-  cmpq $466, (node_3)
+
+  movq $node_1, %rax
+  cmpq $621, (%rax)
   jne bad_exit
-  cmpq $400, (node_4)
+  cmpq $node_2, 8(%rax)
   jne bad_exit
-  cmpq $383, (node_5)
+
+  movq $node_2, %rax
+  cmpq $771, (%rax)
   jne bad_exit
-  cmpq $892, (node_6)
+  cmpq $node_3, 8(%rax)
   jne bad_exit
-  cmpq $423, (node_7)
+
+  movq $node_3, %rax
+  cmpq $687, (%rax)
   jne bad_exit
-  cmpq $31, (node_8)
+  cmpq $node_4, 8(%rax)
   jne bad_exit
+
+  movq $node_4, %rax
+  cmpq $430, (%rax)
+  jne bad_exit
+  cmpq $node_5, 8(%rax)
+  jne bad_exit
+
+  movq $node_5, %rax
+  cmpq $728, (%rax)
+  jne bad_exit
+  cmpq $node_6, 8(%rax)
+  jne bad_exit
+
+  movq $node_6, %rax
+  cmpq $562, (%rax)
+  jne bad_exit
+  cmpq $node_7, 8(%rax)
+  jne bad_exit
+
+  movq $node_7, %rax
+  cmpq $528, (%rax)
+  jne bad_exit
+  cmpq $node_8, 8(%rax)
+  jne bad_exit
+
+  movq $node_8, %rax
+  cmpq $270, (%rax)
+  jne bad_exit
+  cmpq $0, 8(%rax)
+  jne bad_exit
+
 
   movq $60, %rax
   movq $0, %rdi
@@ -31,35 +71,36 @@ bad_exit:
   syscall
 
 .section .data
-  head: .quad node_0
+  head:
+            .quad node_0
   node_0:
-          .quad 400
-          .quad node_1
+            .quad 634
+            .quad node_1
   node_1:
-          .quad 13
-          .quad node_2
+            .quad 621
+            .quad node_2
   node_2:
-          .quad 887
-          .quad node_3
+            .quad 771
+            .quad node_3
   node_3:
-          .quad 466
-          .quad node_4
+            .quad 687
+            .quad node_4
   node_4:
-          .quad 473
-          .quad node_5
+            .quad 430
+            .quad node_5
   node_5:
-          .quad 383
-          .quad node_6
+            .quad 728
+            .quad node_6
   node_6:
-          .quad 892
-          .quad node_7
+            .quad 562
+            .quad node_7
   node_7:
-          .quad 423
-          .quad node_8
+            .quad 270
+            .quad node_8
   node_8:
-          .quad 31
-          .quad 0
-  Source: .quad node_4
-  Value: .quad 400
+            .quad 528
+            .quad 0
+  Source: .quad node_7
+  val: .int 528
 
 
