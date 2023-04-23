@@ -5,7 +5,7 @@
   mov $destination, %rax
   cmpl $-44, (%rax)
   jne bad_exit
-  cmpb $10, 4(%rax)
+  cmpb $2, 4(%rax)
   jne bad_exit
 
   movq $60, %rax
@@ -21,6 +21,6 @@ bad_exit:
   num: .int -44
   source: .byte 0
   destination: .zero 4
-               .byte 10
+               .byte 2
 
 

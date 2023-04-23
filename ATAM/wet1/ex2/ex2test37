@@ -3,23 +3,85 @@
   .section .text
 
   mov $destination, %rax
-  cmpb $181, 0(%rax)
+  cmpb $233, 0(%rax)
   jne bad_exit
-  cmpb $244, 1(%rax)
+  cmpb $63, 1(%rax)
   jne bad_exit
-  cmpb $9, 2(%rax)
+  cmpb $1, 2(%rax)
   jne bad_exit
-  cmpb $251, 3(%rax)
+  cmpb $35, 3(%rax)
   jne bad_exit
-  cmpb $189, 4(%rax)
+  cmpb $19, 4(%rax)
   jne bad_exit
-  cmpb $186, 5(%rax)
+  cmpb $229, 5(%rax)
   jne bad_exit
-  cmpb $10, 6(%rax)
+  cmpb $190, 6(%rax)
   jne bad_exit
-  cmpb $18, 7(%rax)
+  cmpb $32, 7(%rax)
   jne bad_exit
-  cmpb $8, 8(%rax)
+  cmpb $90, 8(%rax)
+  jne bad_exit
+  cmpb $162, 9(%rax)
+  jne bad_exit
+  cmpb $26, 10(%rax)
+  jne bad_exit
+  cmpb $162, 11(%rax)
+  jne bad_exit
+  cmpb $92, 12(%rax)
+  jne bad_exit
+  cmpb $192, 13(%rax)
+  jne bad_exit
+  cmpb $147, 14(%rax)
+  jne bad_exit
+  cmpb $49, 15(%rax)
+  jne bad_exit
+  cmpb $42, 16(%rax)
+  jne bad_exit
+  cmpb $4, 17(%rax)
+  jne bad_exit
+  cmpb $145, 18(%rax)
+  jne bad_exit
+  cmpb $213, 19(%rax)
+  jne bad_exit
+  cmpb $236, 20(%rax)
+  jne bad_exit
+  cmpb $235, 21(%rax)
+  jne bad_exit
+  cmpb $163, 22(%rax)
+  jne bad_exit
+  cmpb $91, 23(%rax)
+  jne bad_exit
+  cmpb $75, 24(%rax)
+  jne bad_exit
+  cmpb $201, 25(%rax)
+  jne bad_exit
+  cmpb $60, 26(%rax)
+  jne bad_exit
+  cmpb $174, 27(%rax)
+  jne bad_exit
+  cmpb $85, 28(%rax)
+  jne bad_exit
+  cmpb $199, 29(%rax)
+  jne bad_exit
+  cmpb $181, 30(%rax)
+  jne bad_exit
+  cmpb $238, 31(%rax)
+  jne bad_exit
+  cmpb $211, 32(%rax)
+  jne bad_exit
+  cmpb $158, 33(%rax)
+  jne bad_exit
+  cmpb $166, 34(%rax)
+  jne bad_exit
+  cmpb $249, 35(%rax)
+  jne bad_exit
+  cmpb $179, 36(%rax)
+  jne bad_exit
+  cmpb $90, 37(%rax)
+  jne bad_exit
+  cmpb $146, 38(%rax)
+  jne bad_exit
+  cmpb $3, 39(%rax)
   jne bad_exit
 
   movq $60, %rax
@@ -32,10 +94,10 @@ bad_exit:
   syscall
 
 .section .data
-  num: .int 8
-  source: .byte 181,244,9,251,189,186,10,18,0
+  num: .int 39
+  source: .byte 233,63,1,35,19,229,190,32,90,162,26,162,92,192,147,49,42,4,145,213,236,235,163,91,75,201,60,174,85,199,181,238,211,158,166,249,179,90,146,0
   destination:
-              .zero 8
-              .byte 8
+              .zero 39
+              .byte 3
 
 

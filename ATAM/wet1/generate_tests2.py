@@ -22,8 +22,8 @@ for m in range(REP_NUM):
         data = ".section .data\n"
         cmps = "  mov $destination, %rax\n"
 
-        endTest = random.randint(0, 10)
-        if i < 3:
+        endTest = random.randint(1, 10)
+        if i < 5:
             num = random.randint(-MAX_ARR_DATA, 1)
             data += f"  num: .int {num}\n"
             data += "  source: .byte 0\n"

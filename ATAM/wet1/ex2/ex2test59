@@ -3,21 +3,99 @@
   .section .text
 
   mov $destination, %rax
-  cmpb $196, 0(%rax)
+  cmpb $244, 0(%rax)
   jne bad_exit
-  cmpb $80, 1(%rax)
+  cmpb $107, 1(%rax)
   jne bad_exit
-  cmpb $174, 2(%rax)
+  cmpb $111, 2(%rax)
   jne bad_exit
-  cmpb $95, 3(%rax)
+  cmpb $173, 3(%rax)
   jne bad_exit
-  cmpb $240, 4(%rax)
+  cmpb $64, 4(%rax)
   jne bad_exit
-  cmpb $178, 5(%rax)
+  cmpb $114, 5(%rax)
   jne bad_exit
-  cmpb $117, 6(%rax)
+  cmpb $250, 6(%rax)
   jne bad_exit
-  cmpb $3, 7(%rax)
+  cmpb $189, 7(%rax)
+  jne bad_exit
+  cmpb $52, 8(%rax)
+  jne bad_exit
+  cmpb $171, 9(%rax)
+  jne bad_exit
+  cmpb $255, 10(%rax)
+  jne bad_exit
+  cmpb $26, 11(%rax)
+  jne bad_exit
+  cmpb $224, 12(%rax)
+  jne bad_exit
+  cmpb $92, 13(%rax)
+  jne bad_exit
+  cmpb $148, 14(%rax)
+  jne bad_exit
+  cmpb $222, 15(%rax)
+  jne bad_exit
+  cmpb $28, 16(%rax)
+  jne bad_exit
+  cmpb $140, 17(%rax)
+  jne bad_exit
+  cmpb $67, 18(%rax)
+  jne bad_exit
+  cmpb $109, 19(%rax)
+  jne bad_exit
+  cmpb $204, 20(%rax)
+  jne bad_exit
+  cmpb $117, 21(%rax)
+  jne bad_exit
+  cmpb $21, 22(%rax)
+  jne bad_exit
+  cmpb $196, 23(%rax)
+  jne bad_exit
+  cmpb $43, 24(%rax)
+  jne bad_exit
+  cmpb $196, 25(%rax)
+  jne bad_exit
+  cmpb $106, 26(%rax)
+  jne bad_exit
+  cmpb $251, 27(%rax)
+  jne bad_exit
+  cmpb $199, 28(%rax)
+  jne bad_exit
+  cmpb $122, 29(%rax)
+  jne bad_exit
+  cmpb $226, 30(%rax)
+  jne bad_exit
+  cmpb $166, 31(%rax)
+  jne bad_exit
+  cmpb $178, 32(%rax)
+  jne bad_exit
+  cmpb $61, 33(%rax)
+  jne bad_exit
+  cmpb $66, 34(%rax)
+  jne bad_exit
+  cmpb $33, 35(%rax)
+  jne bad_exit
+  cmpb $106, 36(%rax)
+  jne bad_exit
+  cmpb $68, 37(%rax)
+  jne bad_exit
+  cmpb $99, 38(%rax)
+  jne bad_exit
+  cmpb $63, 39(%rax)
+  jne bad_exit
+  cmpb $8, 40(%rax)
+  jne bad_exit
+  cmpb $134, 41(%rax)
+  jne bad_exit
+  cmpb $226, 42(%rax)
+  jne bad_exit
+  cmpb $20, 43(%rax)
+  jne bad_exit
+  cmpb $62, 44(%rax)
+  jne bad_exit
+  cmpb $67, 45(%rax)
+  jne bad_exit
+  cmpb $3, 46(%rax)
   jne bad_exit
 
   movq $60, %rax
@@ -30,10 +108,10 @@ bad_exit:
   syscall
 
 .section .data
-  num: .int 7
-  source: .byte 196,80,174,95,240,178,117,0
+  num: .int 46
+  source: .byte 244,107,111,173,64,114,250,189,52,171,255,26,224,92,148,222,28,140,67,109,204,117,21,196,43,196,106,251,199,122,226,166,178,61,66,33,106,68,99,63,8,134,226,20,62,67,0
   destination:
-              .zero 7
+              .zero 46
               .byte 3
 
 

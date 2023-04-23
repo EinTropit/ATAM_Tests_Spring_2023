@@ -3,21 +3,81 @@
   .section .text
 
   mov $destination, %rax
-  cmpb $183, 0(%rax)
+  cmpb $41, 0(%rax)
   jne bad_exit
-  cmpb $90, 1(%rax)
+  cmpb $171, 1(%rax)
   jne bad_exit
-  cmpb $55, 2(%rax)
+  cmpb $249, 2(%rax)
   jne bad_exit
-  cmpb $232, 3(%rax)
+  cmpb $64, 3(%rax)
   jne bad_exit
-  cmpb $158, 4(%rax)
+  cmpb $225, 4(%rax)
   jne bad_exit
-  cmpb $8, 5(%rax)
+  cmpb $23, 5(%rax)
   jne bad_exit
-  cmpb $226, 6(%rax)
+  cmpb $29, 6(%rax)
   jne bad_exit
-  cmpb $9, 7(%rax)
+  cmpb $80, 7(%rax)
+  jne bad_exit
+  cmpb $47, 8(%rax)
+  jne bad_exit
+  cmpb $62, 9(%rax)
+  jne bad_exit
+  cmpb $244, 10(%rax)
+  jne bad_exit
+  cmpb $16, 11(%rax)
+  jne bad_exit
+  cmpb $80, 12(%rax)
+  jne bad_exit
+  cmpb $170, 13(%rax)
+  jne bad_exit
+  cmpb $182, 14(%rax)
+  jne bad_exit
+  cmpb $4, 15(%rax)
+  jne bad_exit
+  cmpb $16, 16(%rax)
+  jne bad_exit
+  cmpb $147, 17(%rax)
+  jne bad_exit
+  cmpb $39, 18(%rax)
+  jne bad_exit
+  cmpb $161, 19(%rax)
+  jne bad_exit
+  cmpb $183, 20(%rax)
+  jne bad_exit
+  cmpb $16, 21(%rax)
+  jne bad_exit
+  cmpb $204, 22(%rax)
+  jne bad_exit
+  cmpb $15, 23(%rax)
+  jne bad_exit
+  cmpb $158, 24(%rax)
+  jne bad_exit
+  cmpb $50, 25(%rax)
+  jne bad_exit
+  cmpb $28, 26(%rax)
+  jne bad_exit
+  cmpb $255, 27(%rax)
+  jne bad_exit
+  cmpb $193, 28(%rax)
+  jne bad_exit
+  cmpb $19, 29(%rax)
+  jne bad_exit
+  cmpb $51, 30(%rax)
+  jne bad_exit
+  cmpb $159, 31(%rax)
+  jne bad_exit
+  cmpb $241, 32(%rax)
+  jne bad_exit
+  cmpb $109, 33(%rax)
+  jne bad_exit
+  cmpb $146, 34(%rax)
+  jne bad_exit
+  cmpb $169, 35(%rax)
+  jne bad_exit
+  cmpb $154, 36(%rax)
+  jne bad_exit
+  cmpb $1, 37(%rax)
   jne bad_exit
 
   movq $60, %rax
@@ -30,10 +90,10 @@ bad_exit:
   syscall
 
 .section .data
-  num: .int 7
-  source: .byte 183,90,55,232,158,8,226,0
+  num: .int 37
+  source: .byte 41,171,249,64,225,23,29,80,47,62,244,16,80,170,182,4,16,147,39,161,183,16,204,15,158,50,28,255,193,19,51,159,241,109,146,169,154,0
   destination:
-              .zero 7
-              .byte 9
+              .zero 37
+              .byte 1
 
 
