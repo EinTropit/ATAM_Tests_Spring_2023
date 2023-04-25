@@ -7,21 +7,93 @@
   jne bad_exit
 
   movq $node_0, %rax
-  cmpq $397, (%rax)
+  cmpl $57, (%rax)
   jne bad_exit
-  cmpq $node_1, 8(%rax)
+  cmpq $node_1, 4(%rax)
   jne bad_exit
 
   movq $node_1, %rax
-  cmpq $518, (%rax)
+  cmpl $280, (%rax)
   jne bad_exit
-  cmpq $node_2, 8(%rax)
+  cmpq $node_2, 4(%rax)
   jne bad_exit
 
   movq $node_2, %rax
-  cmpq $190, (%rax)
+  cmpl $529, (%rax)
   jne bad_exit
-  cmpq $0, 8(%rax)
+  cmpq $node_3, 4(%rax)
+  jne bad_exit
+
+  movq $node_3, %rax
+  cmpl $432, (%rax)
+  jne bad_exit
+  cmpq $node_4, 4(%rax)
+  jne bad_exit
+
+  movq $node_4, %rax
+  cmpl $31, (%rax)
+  jne bad_exit
+  cmpq $node_5, 4(%rax)
+  jne bad_exit
+
+  movq $node_5, %rax
+  cmpl $189, (%rax)
+  jne bad_exit
+  cmpq $node_6, 4(%rax)
+  jne bad_exit
+
+  movq $node_6, %rax
+  cmpl $520, (%rax)
+  jne bad_exit
+  cmpq $node_7, 4(%rax)
+  jne bad_exit
+
+  movq $node_7, %rax
+  cmpl $872, (%rax)
+  jne bad_exit
+  cmpq $node_8, 4(%rax)
+  jne bad_exit
+
+  movq $node_8, %rax
+  cmpl $378, (%rax)
+  jne bad_exit
+  cmpq $node_9, 4(%rax)
+  jne bad_exit
+
+  movq $node_9, %rax
+  cmpl $694, (%rax)
+  jne bad_exit
+  cmpq $node_10, 4(%rax)
+  jne bad_exit
+
+  movq $node_10, %rax
+  cmpl $431, (%rax)
+  jne bad_exit
+  cmpq $node_11, 4(%rax)
+  jne bad_exit
+
+  movq $node_11, %rax
+  cmpl $13, (%rax)
+  jne bad_exit
+  cmpq $node_12, 4(%rax)
+  jne bad_exit
+
+  movq $node_12, %rax
+  cmpl $286, (%rax)
+  jne bad_exit
+  cmpq $node_13, 4(%rax)
+  jne bad_exit
+
+  movq $node_13, %rax
+  cmpl $710, (%rax)
+  jne bad_exit
+  cmpq $node_14, 4(%rax)
+  jne bad_exit
+
+  movq $node_14, %rax
+  cmpl $318, (%rax)
+  jne bad_exit
+  cmpq $0, 4(%rax)
   jne bad_exit
 
 
@@ -38,15 +110,51 @@ bad_exit:
   head:
             .quad node_0
   node_0:
-            .quad 397
+            .int 57
             .quad node_1
   node_1:
-            .quad 518
+            .int 280
             .quad node_2
   node_2:
-            .quad 190
+            .int 529
+            .quad node_3
+  node_3:
+            .int 432
+            .quad node_4
+  node_4:
+            .int 31
+            .quad node_5
+  node_5:
+            .int 189
+            .quad node_6
+  node_6:
+            .int 520
+            .quad node_7
+  node_7:
+            .int 872
+            .quad node_8
+  node_8:
+            .int 378
+            .quad node_9
+  node_9:
+            .int 694
+            .quad node_10
+  node_10:
+            .int 431
+            .quad node_11
+  node_11:
+            .int 13
+            .quad node_12
+  node_12:
+            .int 286
+            .quad node_13
+  node_13:
+            .int 710
+            .quad node_14
+  node_14:
+            .int 318
             .quad 0
-  Source: .quad node_0
-  val: .int 1547
+  Source: .quad node_5
+  val: .int 1208
 
 

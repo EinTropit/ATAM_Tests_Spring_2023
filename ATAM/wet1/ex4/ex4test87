@@ -7,33 +7,135 @@
   jne bad_exit
 
   movq $node_0, %rax
-  cmpq $731, (%rax)
+  cmpl $531, (%rax)
   jne bad_exit
-  cmpq $node_1, 8(%rax)
+  cmpq $node_1, 4(%rax)
   jne bad_exit
 
   movq $node_1, %rax
-  cmpq $783, (%rax)
+  cmpl $142, (%rax)
   jne bad_exit
-  cmpq $node_2, 8(%rax)
+  cmpq $node_2, 4(%rax)
   jne bad_exit
 
   movq $node_2, %rax
-  cmpq $952, (%rax)
+  cmpl $594, (%rax)
   jne bad_exit
-  cmpq $node_3, 8(%rax)
+  cmpq $node_3, 4(%rax)
   jne bad_exit
 
   movq $node_3, %rax
-  cmpq $798, (%rax)
+  cmpl $784, (%rax)
   jne bad_exit
-  cmpq $node_4, 8(%rax)
+  cmpq $node_4, 4(%rax)
   jne bad_exit
 
   movq $node_4, %rax
-  cmpq $555, (%rax)
+  cmpl $712, (%rax)
   jne bad_exit
-  cmpq $0, 8(%rax)
+  cmpq $node_5, 4(%rax)
+  jne bad_exit
+
+  movq $node_5, %rax
+  cmpl $761, (%rax)
+  jne bad_exit
+  cmpq $node_21, 4(%rax)
+  jne bad_exit
+
+  movq $node_21, %rax
+  cmpl $548, (%rax)
+  jne bad_exit
+  cmpq $node_7, 4(%rax)
+  jne bad_exit
+
+  movq $node_7, %rax
+  cmpl $454, (%rax)
+  jne bad_exit
+  cmpq $node_8, 4(%rax)
+  jne bad_exit
+
+  movq $node_8, %rax
+  cmpl $669, (%rax)
+  jne bad_exit
+  cmpq $node_9, 4(%rax)
+  jne bad_exit
+
+  movq $node_9, %rax
+  cmpl $445, (%rax)
+  jne bad_exit
+  cmpq $node_10, 4(%rax)
+  jne bad_exit
+
+  movq $node_10, %rax
+  cmpl $263, (%rax)
+  jne bad_exit
+  cmpq $node_11, 4(%rax)
+  jne bad_exit
+
+  movq $node_11, %rax
+  cmpl $561, (%rax)
+  jne bad_exit
+  cmpq $node_12, 4(%rax)
+  jne bad_exit
+
+  movq $node_12, %rax
+  cmpl $586, (%rax)
+  jne bad_exit
+  cmpq $node_13, 4(%rax)
+  jne bad_exit
+
+  movq $node_13, %rax
+  cmpl $449, (%rax)
+  jne bad_exit
+  cmpq $node_14, 4(%rax)
+  jne bad_exit
+
+  movq $node_14, %rax
+  cmpl $581, (%rax)
+  jne bad_exit
+  cmpq $node_15, 4(%rax)
+  jne bad_exit
+
+  movq $node_15, %rax
+  cmpl $505, (%rax)
+  jne bad_exit
+  cmpq $node_16, 4(%rax)
+  jne bad_exit
+
+  movq $node_16, %rax
+  cmpl $816, (%rax)
+  jne bad_exit
+  cmpq $node_17, 4(%rax)
+  jne bad_exit
+
+  movq $node_17, %rax
+  cmpl $278, (%rax)
+  jne bad_exit
+  cmpq $node_18, 4(%rax)
+  jne bad_exit
+
+  movq $node_18, %rax
+  cmpl $909, (%rax)
+  jne bad_exit
+  cmpq $node_19, 4(%rax)
+  jne bad_exit
+
+  movq $node_19, %rax
+  cmpl $951, (%rax)
+  jne bad_exit
+  cmpq $node_20, 4(%rax)
+  jne bad_exit
+
+  movq $node_20, %rax
+  cmpl $683, (%rax)
+  jne bad_exit
+  cmpq $node_6, 4(%rax)
+  jne bad_exit
+
+  movq $node_6, %rax
+  cmpl $922, (%rax)
+  jne bad_exit
+  cmpq $0, 4(%rax)
   jne bad_exit
 
 
@@ -50,21 +152,72 @@ bad_exit:
   head:
             .quad node_0
   node_0:
-            .quad 731
+            .int 531
             .quad node_1
   node_1:
-            .quad 783
+            .int 142
             .quad node_2
   node_2:
-            .quad 952
+            .int 594
             .quad node_3
   node_3:
-            .quad 798
+            .int 784
             .quad node_4
   node_4:
-            .quad 555
+            .int 712
+            .quad node_5
+  node_5:
+            .int 761
+            .quad node_6
+  node_6:
+            .int 922
+            .quad node_7
+  node_7:
+            .int 454
+            .quad node_8
+  node_8:
+            .int 669
+            .quad node_9
+  node_9:
+            .int 445
+            .quad node_10
+  node_10:
+            .int 263
+            .quad node_11
+  node_11:
+            .int 561
+            .quad node_12
+  node_12:
+            .int 586
+            .quad node_13
+  node_13:
+            .int 449
+            .quad node_14
+  node_14:
+            .int 581
+            .quad node_15
+  node_15:
+            .int 505
+            .quad node_16
+  node_16:
+            .int 816
+            .quad node_17
+  node_17:
+            .int 278
+            .quad node_18
+  node_18:
+            .int 909
+            .quad node_19
+  node_19:
+            .int 951
+            .quad node_20
+  node_20:
+            .int 683
+            .quad node_21
+  node_21:
+            .int 548
             .quad 0
-  Source: .quad node_1
-  val: .int 783
+  Source: .quad node_6
+  val: .int 548
 
 
