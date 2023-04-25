@@ -11,6 +11,15 @@
 * Generating new tests:
   - Run: python generate_tests{i}.py
 
+### notes
+* ex4 tests were changed to check node swap (with the pointers) istead of value swap only
+* For more tests in a batch, you should:
+  - in 'generate_tests{i}.py' increse 'REP_NUM'. DO NOT CHANGE 'NUM_TEST'
+  - in 'runner.sh' change 'MAX_TEST' to 'REP_NUM' * 'NUM_TEST'
+* For longer tests you should:
+  - in 'generate_tests{i}.py' increase 'MAX_ARR_SIZE' to increase the max number of values used
+  - in 'generate_tests{i}.py' increase 'MAX_ARR_DATA' to increase the max number each value can be
+
 ### Troubleshooting
 * If the premission is denied execute: chmod +x "filename"
 * If you get the following message:
