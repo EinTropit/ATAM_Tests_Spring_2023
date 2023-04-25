@@ -134,7 +134,7 @@ for m in range(REP_NUM):
             idx = myList.index(value)
 
         data += f"  Source: .quad node_{source}\n"
-        data += f"  val: .int {value}\n"
+        data += f"  Value: .int {value}\n"
 
         lList.swap(source, value)
         cmps += lList.listCmps()

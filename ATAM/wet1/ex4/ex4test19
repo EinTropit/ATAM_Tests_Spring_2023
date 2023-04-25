@@ -3,59 +3,47 @@
   .section .text
 
   movq $head, %rax
-  cmpq $node_0, 0(%rax)
+  cmpq $node_5, 0(%rax)
   jne bad_exit
 
-  movq $node_0, %rax
-  cmpl $218, (%rax)
+  movq $node_5, %rax
+  cmpl $577, (%rax)
   jne bad_exit
   cmpq $node_1, 4(%rax)
   jne bad_exit
 
   movq $node_1, %rax
-  cmpl $151, (%rax)
+  cmpl $12, (%rax)
   jne bad_exit
   cmpq $node_2, 4(%rax)
   jne bad_exit
 
   movq $node_2, %rax
-  cmpl $566, (%rax)
+  cmpl $89, (%rax)
   jne bad_exit
   cmpq $node_3, 4(%rax)
   jne bad_exit
 
   movq $node_3, %rax
-  cmpl $379, (%rax)
+  cmpl $208, (%rax)
   jne bad_exit
   cmpq $node_4, 4(%rax)
   jne bad_exit
 
   movq $node_4, %rax
-  cmpl $532, (%rax)
+  cmpl $171, (%rax)
   jne bad_exit
-  cmpq $node_5, 4(%rax)
+  cmpq $node_0, 4(%rax)
   jne bad_exit
 
-  movq $node_5, %rax
-  cmpl $854, (%rax)
+  movq $node_0, %rax
+  cmpl $678, (%rax)
   jne bad_exit
   cmpq $node_6, 4(%rax)
   jne bad_exit
 
   movq $node_6, %rax
-  cmpl $968, (%rax)
-  jne bad_exit
-  cmpq $node_7, 4(%rax)
-  jne bad_exit
-
-  movq $node_7, %rax
-  cmpl $993, (%rax)
-  jne bad_exit
-  cmpq $node_8, 4(%rax)
-  jne bad_exit
-
-  movq $node_8, %rax
-  cmpl $979, (%rax)
+  cmpl $218, (%rax)
   jne bad_exit
   cmpq $0, 4(%rax)
   jne bad_exit
@@ -74,33 +62,27 @@ bad_exit:
   head:
             .quad node_0
   node_0:
-            .int 218
+            .int 678
             .quad node_1
   node_1:
-            .int 151
+            .int 12
             .quad node_2
   node_2:
-            .int 566
+            .int 89
             .quad node_3
   node_3:
-            .int 379
+            .int 208
             .quad node_4
   node_4:
-            .int 532
+            .int 171
             .quad node_5
   node_5:
-            .int 854
+            .int 577
             .quad node_6
   node_6:
-            .int 968
-            .quad node_7
-  node_7:
-            .int 993
-            .quad node_8
-  node_8:
-            .int 979
+            .int 218
             .quad 0
-  Source: .quad node_3
-  val: .int 379
+  Source: .quad node_0
+  Value: .int 577
 
 

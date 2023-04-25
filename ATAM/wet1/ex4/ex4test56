@@ -7,265 +7,37 @@
   jne bad_exit
 
   movq $node_0, %rax
-  cmpl $272, (%rax)
+  cmpl $915, (%rax)
   jne bad_exit
   cmpq $node_1, 4(%rax)
   jne bad_exit
 
   movq $node_1, %rax
-  cmpl $270, (%rax)
-  jne bad_exit
-  cmpq $node_2, 4(%rax)
-  jne bad_exit
-
-  movq $node_2, %rax
-  cmpl $830, (%rax)
-  jne bad_exit
-  cmpq $node_3, 4(%rax)
-  jne bad_exit
-
-  movq $node_3, %rax
-  cmpl $142, (%rax)
-  jne bad_exit
-  cmpq $node_4, 4(%rax)
-  jne bad_exit
-
-  movq $node_4, %rax
-  cmpl $981, (%rax)
+  cmpl $996, (%rax)
   jne bad_exit
   cmpq $node_5, 4(%rax)
   jne bad_exit
 
   movq $node_5, %rax
-  cmpl $969, (%rax)
+  cmpl $577, (%rax)
   jne bad_exit
-  cmpq $node_6, 4(%rax)
-  jne bad_exit
-
-  movq $node_6, %rax
-  cmpl $426, (%rax)
-  jne bad_exit
-  cmpq $node_7, 4(%rax)
+  cmpq $node_3, 4(%rax)
   jne bad_exit
 
-  movq $node_7, %rax
-  cmpl $756, (%rax)
+  movq $node_3, %rax
+  cmpl $51, (%rax)
   jne bad_exit
-  cmpq $node_8, 4(%rax)
-  jne bad_exit
-
-  movq $node_8, %rax
-  cmpl $32, (%rax)
-  jne bad_exit
-  cmpq $node_9, 4(%rax)
+  cmpq $node_4, 4(%rax)
   jne bad_exit
 
-  movq $node_9, %rax
-  cmpl $183, (%rax)
+  movq $node_4, %rax
+  cmpl $217, (%rax)
   jne bad_exit
-  cmpq $node_10, 4(%rax)
-  jne bad_exit
-
-  movq $node_10, %rax
-  cmpl $910, (%rax)
-  jne bad_exit
-  cmpq $node_11, 4(%rax)
+  cmpq $node_2, 4(%rax)
   jne bad_exit
 
-  movq $node_11, %rax
-  cmpl $316, (%rax)
-  jne bad_exit
-  cmpq $node_12, 4(%rax)
-  jne bad_exit
-
-  movq $node_12, %rax
-  cmpl $440, (%rax)
-  jne bad_exit
-  cmpq $node_13, 4(%rax)
-  jne bad_exit
-
-  movq $node_13, %rax
-  cmpl $555, (%rax)
-  jne bad_exit
-  cmpq $node_14, 4(%rax)
-  jne bad_exit
-
-  movq $node_14, %rax
-  cmpl $712, (%rax)
-  jne bad_exit
-  cmpq $node_15, 4(%rax)
-  jne bad_exit
-
-  movq $node_15, %rax
-  cmpl $676, (%rax)
-  jne bad_exit
-  cmpq $node_16, 4(%rax)
-  jne bad_exit
-
-  movq $node_16, %rax
-  cmpl $892, (%rax)
-  jne bad_exit
-  cmpq $node_17, 4(%rax)
-  jne bad_exit
-
-  movq $node_17, %rax
-  cmpl $453, (%rax)
-  jne bad_exit
-  cmpq $node_18, 4(%rax)
-  jne bad_exit
-
-  movq $node_18, %rax
-  cmpl $255, (%rax)
-  jne bad_exit
-  cmpq $node_19, 4(%rax)
-  jne bad_exit
-
-  movq $node_19, %rax
-  cmpl $430, (%rax)
-  jne bad_exit
-  cmpq $node_20, 4(%rax)
-  jne bad_exit
-
-  movq $node_20, %rax
-  cmpl $151, (%rax)
-  jne bad_exit
-  cmpq $node_21, 4(%rax)
-  jne bad_exit
-
-  movq $node_21, %rax
-  cmpl $848, (%rax)
-  jne bad_exit
-  cmpq $node_22, 4(%rax)
-  jne bad_exit
-
-  movq $node_22, %rax
-  cmpl $501, (%rax)
-  jne bad_exit
-  cmpq $node_23, 4(%rax)
-  jne bad_exit
-
-  movq $node_23, %rax
-  cmpl $109, (%rax)
-  jne bad_exit
-  cmpq $node_24, 4(%rax)
-  jne bad_exit
-
-  movq $node_24, %rax
-  cmpl $148, (%rax)
-  jne bad_exit
-  cmpq $node_25, 4(%rax)
-  jne bad_exit
-
-  movq $node_25, %rax
-  cmpl $921, (%rax)
-  jne bad_exit
-  cmpq $node_26, 4(%rax)
-  jne bad_exit
-
-  movq $node_26, %rax
-  cmpl $311, (%rax)
-  jne bad_exit
-  cmpq $node_27, 4(%rax)
-  jne bad_exit
-
-  movq $node_27, %rax
-  cmpl $372, (%rax)
-  jne bad_exit
-  cmpq $node_28, 4(%rax)
-  jne bad_exit
-
-  movq $node_28, %rax
-  cmpl $360, (%rax)
-  jne bad_exit
-  cmpq $node_29, 4(%rax)
-  jne bad_exit
-
-  movq $node_29, %rax
-  cmpl $19, (%rax)
-  jne bad_exit
-  cmpq $node_38, 4(%rax)
-  jne bad_exit
-
-  movq $node_38, %rax
-  cmpl $102, (%rax)
-  jne bad_exit
-  cmpq $node_31, 4(%rax)
-  jne bad_exit
-
-  movq $node_31, %rax
-  cmpl $326, (%rax)
-  jne bad_exit
-  cmpq $node_32, 4(%rax)
-  jne bad_exit
-
-  movq $node_32, %rax
-  cmpl $573, (%rax)
-  jne bad_exit
-  cmpq $node_33, 4(%rax)
-  jne bad_exit
-
-  movq $node_33, %rax
-  cmpl $918, (%rax)
-  jne bad_exit
-  cmpq $node_34, 4(%rax)
-  jne bad_exit
-
-  movq $node_34, %rax
-  cmpl $615, (%rax)
-  jne bad_exit
-  cmpq $node_35, 4(%rax)
-  jne bad_exit
-
-  movq $node_35, %rax
-  cmpl $349, (%rax)
-  jne bad_exit
-  cmpq $node_36, 4(%rax)
-  jne bad_exit
-
-  movq $node_36, %rax
-  cmpl $844, (%rax)
-  jne bad_exit
-  cmpq $node_37, 4(%rax)
-  jne bad_exit
-
-  movq $node_37, %rax
-  cmpl $776, (%rax)
-  jne bad_exit
-  cmpq $node_30, 4(%rax)
-  jne bad_exit
-
-  movq $node_30, %rax
-  cmpl $540, (%rax)
-  jne bad_exit
-  cmpq $node_39, 4(%rax)
-  jne bad_exit
-
-  movq $node_39, %rax
-  cmpl $76, (%rax)
-  jne bad_exit
-  cmpq $node_40, 4(%rax)
-  jne bad_exit
-
-  movq $node_40, %rax
-  cmpl $948, (%rax)
-  jne bad_exit
-  cmpq $node_41, 4(%rax)
-  jne bad_exit
-
-  movq $node_41, %rax
-  cmpl $747, (%rax)
-  jne bad_exit
-  cmpq $node_42, 4(%rax)
-  jne bad_exit
-
-  movq $node_42, %rax
-  cmpl $505, (%rax)
-  jne bad_exit
-  cmpq $node_43, 4(%rax)
-  jne bad_exit
-
-  movq $node_43, %rax
-  cmpl $783, (%rax)
+  movq $node_2, %rax
+  cmpl $932, (%rax)
   jne bad_exit
   cmpq $0, 4(%rax)
   jne bad_exit
@@ -284,138 +56,24 @@ bad_exit:
   head:
             .quad node_0
   node_0:
-            .int 272
+            .int 915
             .quad node_1
   node_1:
-            .int 270
+            .int 996
             .quad node_2
   node_2:
-            .int 830
+            .int 932
             .quad node_3
   node_3:
-            .int 142
+            .int 51
             .quad node_4
   node_4:
-            .int 981
+            .int 217
             .quad node_5
   node_5:
-            .int 969
-            .quad node_6
-  node_6:
-            .int 426
-            .quad node_7
-  node_7:
-            .int 756
-            .quad node_8
-  node_8:
-            .int 32
-            .quad node_9
-  node_9:
-            .int 183
-            .quad node_10
-  node_10:
-            .int 910
-            .quad node_11
-  node_11:
-            .int 316
-            .quad node_12
-  node_12:
-            .int 440
-            .quad node_13
-  node_13:
-            .int 555
-            .quad node_14
-  node_14:
-            .int 712
-            .quad node_15
-  node_15:
-            .int 676
-            .quad node_16
-  node_16:
-            .int 892
-            .quad node_17
-  node_17:
-            .int 453
-            .quad node_18
-  node_18:
-            .int 255
-            .quad node_19
-  node_19:
-            .int 430
-            .quad node_20
-  node_20:
-            .int 151
-            .quad node_21
-  node_21:
-            .int 848
-            .quad node_22
-  node_22:
-            .int 501
-            .quad node_23
-  node_23:
-            .int 109
-            .quad node_24
-  node_24:
-            .int 148
-            .quad node_25
-  node_25:
-            .int 921
-            .quad node_26
-  node_26:
-            .int 311
-            .quad node_27
-  node_27:
-            .int 372
-            .quad node_28
-  node_28:
-            .int 360
-            .quad node_29
-  node_29:
-            .int 19
-            .quad node_30
-  node_30:
-            .int 540
-            .quad node_31
-  node_31:
-            .int 326
-            .quad node_32
-  node_32:
-            .int 573
-            .quad node_33
-  node_33:
-            .int 918
-            .quad node_34
-  node_34:
-            .int 615
-            .quad node_35
-  node_35:
-            .int 349
-            .quad node_36
-  node_36:
-            .int 844
-            .quad node_37
-  node_37:
-            .int 776
-            .quad node_38
-  node_38:
-            .int 102
-            .quad node_39
-  node_39:
-            .int 76
-            .quad node_40
-  node_40:
-            .int 948
-            .quad node_41
-  node_41:
-            .int 747
-            .quad node_42
-  node_42:
-            .int 505
-            .quad node_43
-  node_43:
-            .int 783
+            .int 577
             .quad 0
-  Source: .quad node_38
-  val: .int 540
+  Source: .quad node_2
+  Value: .int 577
 
 

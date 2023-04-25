@@ -7,61 +7,127 @@
   jne bad_exit
 
   movq $node_0, %rax
-  cmpl $57, (%rax)
+  cmpl $364, (%rax)
   jne bad_exit
-  cmpq $node_6, 4(%rax)
+  cmpq $node_20, 4(%rax)
   jne bad_exit
 
-  movq $node_6, %rax
-  cmpl $759, (%rax)
+  movq $node_20, %rax
+  cmpl $25, (%rax)
   jne bad_exit
   cmpq $node_2, 4(%rax)
   jne bad_exit
 
   movq $node_2, %rax
-  cmpl $936, (%rax)
+  cmpl $859, (%rax)
   jne bad_exit
   cmpq $node_3, 4(%rax)
   jne bad_exit
 
   movq $node_3, %rax
-  cmpl $853, (%rax)
+  cmpl $783, (%rax)
   jne bad_exit
   cmpq $node_4, 4(%rax)
   jne bad_exit
 
   movq $node_4, %rax
-  cmpl $154, (%rax)
+  cmpl $679, (%rax)
   jne bad_exit
   cmpq $node_5, 4(%rax)
   jne bad_exit
 
   movq $node_5, %rax
-  cmpl $886, (%rax)
+  cmpl $633, (%rax)
   jne bad_exit
-  cmpq $node_1, 4(%rax)
+  cmpq $node_6, 4(%rax)
   jne bad_exit
 
-  movq $node_1, %rax
-  cmpl $203, (%rax)
+  movq $node_6, %rax
+  cmpl $96, (%rax)
   jne bad_exit
   cmpq $node_7, 4(%rax)
   jne bad_exit
 
   movq $node_7, %rax
-  cmpl $722, (%rax)
+  cmpl $376, (%rax)
   jne bad_exit
   cmpq $node_8, 4(%rax)
   jne bad_exit
 
   movq $node_8, %rax
-  cmpl $34, (%rax)
+  cmpl $115, (%rax)
   jne bad_exit
   cmpq $node_9, 4(%rax)
   jne bad_exit
 
   movq $node_9, %rax
-  cmpl $714, (%rax)
+  cmpl $876, (%rax)
+  jne bad_exit
+  cmpq $node_10, 4(%rax)
+  jne bad_exit
+
+  movq $node_10, %rax
+  cmpl $222, (%rax)
+  jne bad_exit
+  cmpq $node_11, 4(%rax)
+  jne bad_exit
+
+  movq $node_11, %rax
+  cmpl $43, (%rax)
+  jne bad_exit
+  cmpq $node_12, 4(%rax)
+  jne bad_exit
+
+  movq $node_12, %rax
+  cmpl $875, (%rax)
+  jne bad_exit
+  cmpq $node_13, 4(%rax)
+  jne bad_exit
+
+  movq $node_13, %rax
+  cmpl $585, (%rax)
+  jne bad_exit
+  cmpq $node_14, 4(%rax)
+  jne bad_exit
+
+  movq $node_14, %rax
+  cmpl $810, (%rax)
+  jne bad_exit
+  cmpq $node_15, 4(%rax)
+  jne bad_exit
+
+  movq $node_15, %rax
+  cmpl $589, (%rax)
+  jne bad_exit
+  cmpq $node_16, 4(%rax)
+  jne bad_exit
+
+  movq $node_16, %rax
+  cmpl $876, (%rax)
+  jne bad_exit
+  cmpq $node_17, 4(%rax)
+  jne bad_exit
+
+  movq $node_17, %rax
+  cmpl $484, (%rax)
+  jne bad_exit
+  cmpq $node_18, 4(%rax)
+  jne bad_exit
+
+  movq $node_18, %rax
+  cmpl $343, (%rax)
+  jne bad_exit
+  cmpq $node_19, 4(%rax)
+  jne bad_exit
+
+  movq $node_19, %rax
+  cmpl $276, (%rax)
+  jne bad_exit
+  cmpq $node_1, 4(%rax)
+  jne bad_exit
+
+  movq $node_1, %rax
+  cmpl $233, (%rax)
   jne bad_exit
   cmpq $0, 4(%rax)
   jne bad_exit
@@ -80,36 +146,69 @@ bad_exit:
   head:
             .quad node_0
   node_0:
-            .int 57
+            .int 364
             .quad node_1
   node_1:
-            .int 203
+            .int 233
             .quad node_2
   node_2:
-            .int 936
+            .int 859
             .quad node_3
   node_3:
-            .int 853
+            .int 783
             .quad node_4
   node_4:
-            .int 154
+            .int 679
             .quad node_5
   node_5:
-            .int 886
+            .int 633
             .quad node_6
   node_6:
-            .int 759
+            .int 96
             .quad node_7
   node_7:
-            .int 722
+            .int 376
             .quad node_8
   node_8:
-            .int 34
+            .int 115
             .quad node_9
   node_9:
-            .int 714
+            .int 876
+            .quad node_10
+  node_10:
+            .int 222
+            .quad node_11
+  node_11:
+            .int 43
+            .quad node_12
+  node_12:
+            .int 875
+            .quad node_13
+  node_13:
+            .int 585
+            .quad node_14
+  node_14:
+            .int 810
+            .quad node_15
+  node_15:
+            .int 589
+            .quad node_16
+  node_16:
+            .int 876
+            .quad node_17
+  node_17:
+            .int 484
+            .quad node_18
+  node_18:
+            .int 343
+            .quad node_19
+  node_19:
+            .int 276
+            .quad node_20
+  node_20:
+            .int 25
             .quad 0
-  Source: .quad node_6
-  val: .int 203
+  Source: .quad node_1
+  Value: .int 25
 
 

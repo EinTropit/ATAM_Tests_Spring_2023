@@ -3,17 +3,11 @@
   .section .text
 
   movq $head, %rax
-  cmpq $node_1, 0(%rax)
-  jne bad_exit
-
-  movq $node_1, %rax
-  cmpl $305, (%rax)
-  jne bad_exit
-  cmpq $node_0, 4(%rax)
+  cmpq $node_0, 0(%rax)
   jne bad_exit
 
   movq $node_0, %rax
-  cmpl $548, (%rax)
+  cmpl $499, (%rax)
   jne bad_exit
   cmpq $0, 4(%rax)
   jne bad_exit
@@ -32,12 +26,9 @@ bad_exit:
   head:
             .quad node_0
   node_0:
-            .int 548
-            .quad node_1
-  node_1:
-            .int 305
+            .int 499
             .quad 0
-  Source: .quad node_1
-  val: .int 548
+  Source: .quad node_0
+  Value: .int 499
 
 

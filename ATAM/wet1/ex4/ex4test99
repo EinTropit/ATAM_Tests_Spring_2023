@@ -3,29 +3,23 @@
   .section .text
 
   movq $head, %rax
-  cmpq $node_2, 0(%rax)
+  cmpq $node_0, 0(%rax)
   jne bad_exit
 
-  movq $node_2, %rax
-  cmpl $376, (%rax)
+  movq $node_0, %rax
+  cmpl $726, (%rax)
   jne bad_exit
   cmpq $node_1, 4(%rax)
   jne bad_exit
 
   movq $node_1, %rax
-  cmpl $79, (%rax)
+  cmpl $341, (%rax)
   jne bad_exit
-  cmpq $node_0, 4(%rax)
-  jne bad_exit
-
-  movq $node_0, %rax
-  cmpl $638, (%rax)
-  jne bad_exit
-  cmpq $node_3, 4(%rax)
+  cmpq $node_2, 4(%rax)
   jne bad_exit
 
-  movq $node_3, %rax
-  cmpl $17, (%rax)
+  movq $node_2, %rax
+  cmpl $886, (%rax)
   jne bad_exit
   cmpq $0, 4(%rax)
   jne bad_exit
@@ -44,18 +38,15 @@ bad_exit:
   head:
             .quad node_0
   node_0:
-            .int 638
+            .int 726
             .quad node_1
   node_1:
-            .int 79
+            .int 341
             .quad node_2
   node_2:
-            .int 376
-            .quad node_3
-  node_3:
-            .int 17
+            .int 886
             .quad 0
-  Source: .quad node_0
-  val: .int 376
+  Source: .quad node_1
+  Value: .int 341
 
 

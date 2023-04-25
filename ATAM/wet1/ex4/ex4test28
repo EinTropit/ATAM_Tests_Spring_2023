@@ -7,73 +7,13 @@
   jne bad_exit
 
   movq $node_1, %rax
-  cmpl $495, (%rax)
+  cmpl $404, (%rax)
   jne bad_exit
   cmpq $node_0, 4(%rax)
   jne bad_exit
 
   movq $node_0, %rax
-  cmpl $91, (%rax)
-  jne bad_exit
-  cmpq $node_2, 4(%rax)
-  jne bad_exit
-
-  movq $node_2, %rax
-  cmpl $810, (%rax)
-  jne bad_exit
-  cmpq $node_3, 4(%rax)
-  jne bad_exit
-
-  movq $node_3, %rax
-  cmpl $729, (%rax)
-  jne bad_exit
-  cmpq $node_4, 4(%rax)
-  jne bad_exit
-
-  movq $node_4, %rax
-  cmpl $67, (%rax)
-  jne bad_exit
-  cmpq $node_5, 4(%rax)
-  jne bad_exit
-
-  movq $node_5, %rax
-  cmpl $41, (%rax)
-  jne bad_exit
-  cmpq $node_6, 4(%rax)
-  jne bad_exit
-
-  movq $node_6, %rax
-  cmpl $683, (%rax)
-  jne bad_exit
-  cmpq $node_7, 4(%rax)
-  jne bad_exit
-
-  movq $node_7, %rax
-  cmpl $681, (%rax)
-  jne bad_exit
-  cmpq $node_8, 4(%rax)
-  jne bad_exit
-
-  movq $node_8, %rax
-  cmpl $830, (%rax)
-  jne bad_exit
-  cmpq $node_9, 4(%rax)
-  jne bad_exit
-
-  movq $node_9, %rax
-  cmpl $719, (%rax)
-  jne bad_exit
-  cmpq $node_10, 4(%rax)
-  jne bad_exit
-
-  movq $node_10, %rax
-  cmpl $548, (%rax)
-  jne bad_exit
-  cmpq $node_11, 4(%rax)
-  jne bad_exit
-
-  movq $node_11, %rax
-  cmpl $111, (%rax)
+  cmpl $676, (%rax)
   jne bad_exit
   cmpq $0, 4(%rax)
   jne bad_exit
@@ -92,42 +32,12 @@ bad_exit:
   head:
             .quad node_0
   node_0:
-            .int 91
+            .int 676
             .quad node_1
   node_1:
-            .int 495
-            .quad node_2
-  node_2:
-            .int 810
-            .quad node_3
-  node_3:
-            .int 729
-            .quad node_4
-  node_4:
-            .int 67
-            .quad node_5
-  node_5:
-            .int 41
-            .quad node_6
-  node_6:
-            .int 683
-            .quad node_7
-  node_7:
-            .int 681
-            .quad node_8
-  node_8:
-            .int 830
-            .quad node_9
-  node_9:
-            .int 719
-            .quad node_10
-  node_10:
-            .int 548
-            .quad node_11
-  node_11:
-            .int 111
+            .int 404
             .quad 0
-  Source: .quad node_1
-  val: .int 91
+  Source: .quad node_0
+  Value: .int 404
 
 
