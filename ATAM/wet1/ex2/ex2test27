@@ -3,49 +3,61 @@
   .section .text
 
   mov $destination, %rax
-  cmpb $107, 0(%rax)
+  cmpb $167, 0(%rax)
   jne bad_exit
-  cmpb $44, 1(%rax)
+  cmpb $196, 1(%rax)
   jne bad_exit
-  cmpb $220, 2(%rax)
+  cmpb $125, 2(%rax)
   jne bad_exit
-  cmpb $253, 3(%rax)
+  cmpb $58, 3(%rax)
   jne bad_exit
-  cmpb $68, 4(%rax)
+  cmpb $7, 4(%rax)
   jne bad_exit
-  cmpb $177, 5(%rax)
+  cmpb $29, 5(%rax)
   jne bad_exit
-  cmpb $246, 6(%rax)
+  cmpb $30, 6(%rax)
   jne bad_exit
-  cmpb $29, 7(%rax)
+  cmpb $168, 7(%rax)
   jne bad_exit
-  cmpb $245, 8(%rax)
+  cmpb $177, 8(%rax)
   jne bad_exit
-  cmpb $207, 9(%rax)
+  cmpb $130, 9(%rax)
   jne bad_exit
-  cmpb $141, 10(%rax)
+  cmpb $186, 10(%rax)
   jne bad_exit
-  cmpb $138, 11(%rax)
+  cmpb $61, 11(%rax)
   jne bad_exit
-  cmpb $69, 12(%rax)
+  cmpb $226, 12(%rax)
   jne bad_exit
-  cmpb $96, 13(%rax)
+  cmpb $245, 13(%rax)
   jne bad_exit
-  cmpb $80, 14(%rax)
+  cmpb $14, 14(%rax)
   jne bad_exit
-  cmpb $91, 15(%rax)
+  cmpb $187, 15(%rax)
   jne bad_exit
-  cmpb $2, 16(%rax)
+  cmpb $77, 16(%rax)
   jne bad_exit
-  cmpb $65, 17(%rax)
+  cmpb $190, 17(%rax)
   jne bad_exit
-  cmpb $85, 18(%rax)
+  cmpb $174, 18(%rax)
   jne bad_exit
-  cmpb $181, 19(%rax)
+  cmpb $120, 19(%rax)
   jne bad_exit
-  cmpb $71, 20(%rax)
+  cmpb $169, 20(%rax)
   jne bad_exit
-  cmpb $6, 21(%rax)
+  cmpb $255, 21(%rax)
+  jne bad_exit
+  cmpb $104, 22(%rax)
+  jne bad_exit
+  cmpb $124, 23(%rax)
+  jne bad_exit
+  cmpb $145, 24(%rax)
+  jne bad_exit
+  cmpb $232, 25(%rax)
+  jne bad_exit
+  cmpb $143, 26(%rax)
+  jne bad_exit
+  cmpb $4, 27(%rax)
   jne bad_exit
 
   movq $60, %rax
@@ -58,10 +70,10 @@ bad_exit:
   syscall
 
 .section .data
-  num: .int 21
-  source: .byte 107,44,220,253,68,177,246,29,245,207,141,138,69,96,80,91,2,65,85,181,71,0
-  destination:
-              .zero 21
-              .byte 6
+  num: .int 27
+  source: .byte 167,196,125,58,7,29,30,168,177,130,186,61,226,245,14
+  destination: .byte 187,77,190,174,120,169,255,104,124,145,232,143
+               .zero 15
+               .byte 4
 
 

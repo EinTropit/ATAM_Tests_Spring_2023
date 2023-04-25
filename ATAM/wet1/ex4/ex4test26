@@ -7,21 +7,9 @@
   jne bad_exit
 
   movq $node_0, %rax
-  cmpq $620, (%rax)
+  cmpl $915, (%rax)
   jne bad_exit
-  cmpq $node_1, 8(%rax)
-  jne bad_exit
-
-  movq $node_1, %rax
-  cmpq $511, (%rax)
-  jne bad_exit
-  cmpq $node_2, 8(%rax)
-  jne bad_exit
-
-  movq $node_2, %rax
-  cmpq $979, (%rax)
-  jne bad_exit
-  cmpq $0, 8(%rax)
+  cmpq $0, 4(%rax)
   jne bad_exit
 
 
@@ -38,15 +26,9 @@ bad_exit:
   head:
             .quad node_0
   node_0:
-            .quad 979
-            .quad node_1
-  node_1:
-            .quad 511
-            .quad node_2
-  node_2:
-            .quad 620
+            .int 915
             .quad 0
   Source: .quad node_0
-  val: .int 620
+  Value: .int 915
 
 

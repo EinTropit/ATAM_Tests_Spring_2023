@@ -3,65 +3,53 @@
   .section .text
 
   mov $destination, %rax
-  cmpb $100, 0(%rax)
+  cmpb $67, 0(%rax)
   jne bad_exit
-  cmpb $86, 1(%rax)
+  cmpb $236, 1(%rax)
   jne bad_exit
-  cmpb $127, 2(%rax)
+  cmpb $101, 2(%rax)
   jne bad_exit
-  cmpb $248, 3(%rax)
+  cmpb $14, 3(%rax)
   jne bad_exit
-  cmpb $119, 4(%rax)
+  cmpb $61, 4(%rax)
   jne bad_exit
-  cmpb $166, 5(%rax)
+  cmpb $19, 5(%rax)
   jne bad_exit
-  cmpb $54, 6(%rax)
+  cmpb $137, 6(%rax)
   jne bad_exit
-  cmpb $154, 7(%rax)
+  cmpb $160, 7(%rax)
   jne bad_exit
-  cmpb $199, 8(%rax)
+  cmpb $233, 8(%rax)
   jne bad_exit
-  cmpb $218, 9(%rax)
+  cmpb $145, 9(%rax)
   jne bad_exit
-  cmpb $19, 10(%rax)
+  cmpb $34, 10(%rax)
   jne bad_exit
-  cmpb $237, 11(%rax)
+  cmpb $19, 11(%rax)
   jne bad_exit
-  cmpb $3, 12(%rax)
+  cmpb $203, 12(%rax)
   jne bad_exit
-  cmpb $35, 13(%rax)
+  cmpb $231, 13(%rax)
   jne bad_exit
-  cmpb $238, 14(%rax)
+  cmpb $60, 14(%rax)
   jne bad_exit
-  cmpb $23, 15(%rax)
+  cmpb $182, 15(%rax)
   jne bad_exit
   cmpb $60, 16(%rax)
   jne bad_exit
-  cmpb $227, 17(%rax)
+  cmpb $240, 17(%rax)
   jne bad_exit
-  cmpb $40, 18(%rax)
+  cmpb $205, 18(%rax)
   jne bad_exit
-  cmpb $253, 19(%rax)
+  cmpb $35, 19(%rax)
   jne bad_exit
-  cmpb $14, 20(%rax)
+  cmpb $200, 20(%rax)
   jne bad_exit
-  cmpb $151, 21(%rax)
+  cmpb $109, 21(%rax)
   jne bad_exit
-  cmpb $170, 22(%rax)
+  cmpb $59, 22(%rax)
   jne bad_exit
-  cmpb $227, 23(%rax)
-  jne bad_exit
-  cmpb $140, 24(%rax)
-  jne bad_exit
-  cmpb $148, 25(%rax)
-  jne bad_exit
-  cmpb $2, 26(%rax)
-  jne bad_exit
-  cmpb $50, 27(%rax)
-  jne bad_exit
-  cmpb $56, 28(%rax)
-  jne bad_exit
-  cmpb $2, 29(%rax)
+  cmpb $60, 23(%rax)
   jne bad_exit
 
   movq $60, %rax
@@ -74,10 +62,8 @@ bad_exit:
   syscall
 
 .section .data
-  num: .int 29
-  source: .byte 100,86,127,248,119,166,54,154,199,218,19,237,3,35,238,23,60,227,40,253,14,151,170,227,140,148,2,50,56,0
-  destination:
-              .zero 29
-              .byte 2
+  num: .int 23
+  destination: .zero 9
+  source: .byte 67,236,101,14,61,19,137,160,233,145,34,19,203,231,60,182,60,240,205,35,200,109,59
 
 

@@ -53,15 +53,25 @@ class LinkedList:
         val_node = self.find_value(val)
 
         if (val_node is not None) and (source_node is not None):
-            temp = source_node.val
-            source_node.val = val_node.val
-            val_node.val = temp
+            if val_node == source_node:
+                return
+            temp_next = source_node.next
+            if val_node.next == source_node:
+                source_node.next = val_node
+            else:
+                source_node.next = val_node.next
+                source_node.prev.next = val_node
+            if temp_next == val_node:
+                val_node.next = source_node
+            else:
+                val_node.next = temp_next
+                val_node.prev.next = source_node
 
     def listData(self):
         dataT = ""
         dataT += f"  {self.name}:\n"
         if self.val is not None:
-            dataT += f"            .quad {self.val}\n"
+            dataT += f"            .int {self.val}\n"
         if self.next is not None:
             dataT += f"            .quad {self.next.name}\n"
         else:
@@ -76,9 +86,9 @@ class LinkedList:
         disp = 0
         cmpsT += f"  movq ${self.name}, %rax\n"
         if self.val is not None:
-            cmpsT += f"  cmpq ${self.val}, (%rax)\n"
+            cmpsT += f"  cmpl ${self.val}, (%rax)\n"
             cmpsT += "  jne bad_exit\n"
-            disp = 8
+            disp = 4
         if self.next is not None:
             cmpsT += f"  cmpq ${self.next.name}, {disp}(%rax)\n"
         else:
@@ -124,7 +134,7 @@ for m in range(REP_NUM):
             idx = myList.index(value)
 
         data += f"  Source: .quad node_{source}\n"
-        data += f"  val: .int {value}\n"
+        data += f"  Value: .int {value}\n"
 
         lList.swap(source, value)
         cmps += lList.listCmps()
