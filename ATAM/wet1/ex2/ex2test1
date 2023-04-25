@@ -3,9 +3,9 @@
   .section .text
 
   mov $destination, %rax
-  cmpl $-186, (%rax)
+  cmpl $-211, (%rax)
   jne bad_exit
-  cmpb $6, 4(%rax)
+  cmpb $9, 4(%rax)
   jne bad_exit
 
   movq $60, %rax
@@ -18,9 +18,9 @@ bad_exit:
   syscall
 
 .section .data
-  num: .int -186
+  num: .int -211
   source: .byte 0
   destination: .zero 4
-               .byte 6
+               .byte 9
 
 

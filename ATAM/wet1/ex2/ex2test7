@@ -3,69 +3,39 @@
   .section .text
 
   mov $destination, %rax
-  cmpb $97, 0(%rax)
+  cmpb $249, 0(%rax)
   jne bad_exit
-  cmpb $120, 1(%rax)
+  cmpb $97, 1(%rax)
   jne bad_exit
-  cmpb $195, 2(%rax)
+  cmpb $86, 2(%rax)
   jne bad_exit
-  cmpb $100, 3(%rax)
+  cmpb $165, 3(%rax)
   jne bad_exit
-  cmpb $235, 4(%rax)
+  cmpb $122, 4(%rax)
   jne bad_exit
-  cmpb $11, 5(%rax)
+  cmpb $190, 5(%rax)
   jne bad_exit
-  cmpb $114, 6(%rax)
+  cmpb $71, 6(%rax)
   jne bad_exit
-  cmpb $212, 7(%rax)
+  cmpb $101, 7(%rax)
   jne bad_exit
-  cmpb $247, 8(%rax)
+  cmpb $120, 8(%rax)
   jne bad_exit
-  cmpb $136, 9(%rax)
+  cmpb $68, 9(%rax)
   jne bad_exit
-  cmpb $27, 10(%rax)
+  cmpb $113, 10(%rax)
   jne bad_exit
-  cmpb $64, 11(%rax)
+  cmpb $242, 11(%rax)
   jne bad_exit
-  cmpb $251, 12(%rax)
+  cmpb $212, 12(%rax)
   jne bad_exit
-  cmpb $6, 13(%rax)
+  cmpb $139, 13(%rax)
   jne bad_exit
-  cmpb $27, 14(%rax)
+  cmpb $150, 14(%rax)
   jne bad_exit
-  cmpb $128, 15(%rax)
+  cmpb $67, 15(%rax)
   jne bad_exit
-  cmpb $81, 16(%rax)
-  jne bad_exit
-  cmpb $112, 17(%rax)
-  jne bad_exit
-  cmpb $176, 18(%rax)
-  jne bad_exit
-  cmpb $141, 19(%rax)
-  jne bad_exit
-  cmpb $195, 20(%rax)
-  jne bad_exit
-  cmpb $221, 21(%rax)
-  jne bad_exit
-  cmpb $146, 22(%rax)
-  jne bad_exit
-  cmpb $118, 23(%rax)
-  jne bad_exit
-  cmpb $129, 24(%rax)
-  jne bad_exit
-  cmpb $206, 25(%rax)
-  jne bad_exit
-  cmpb $208, 26(%rax)
-  jne bad_exit
-  cmpb $168, 27(%rax)
-  jne bad_exit
-  cmpb $144, 28(%rax)
-  jne bad_exit
-  cmpb $7, 29(%rax)
-  jne bad_exit
-  cmpb $112, 30(%rax)
-  jne bad_exit
-  cmpb $1, 31(%rax)
+  cmpb $1, 16(%rax)
   jne bad_exit
 
   movq $60, %rax
@@ -78,10 +48,10 @@ bad_exit:
   syscall
 
 .section .data
-  num: .int 31
-  source: .byte 97,120,195,100,235,11,114,212,247,136,27,64,251,6,27,128,81,112,176,141,195,221,146,118,129,206,208,168,144,7,112,0
-  destination:
-              .zero 31
-              .byte 1
+  num: .int 16
+  source: .byte 249,97,86,165,122,190,71,101,120,68
+  destination: .byte 113,242,212,139,150,67
+               .zero 10
+               .byte 1
 
 

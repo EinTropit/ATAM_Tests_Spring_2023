@@ -3,9 +3,91 @@
   .section .text
 
   mov $destination, %rax
-  cmpl $-178, (%rax)
+  cmpb $118, 0(%rax)
   jne bad_exit
-  cmpb $1, 4(%rax)
+  cmpb $0, 1(%rax)
+  jne bad_exit
+  cmpb $18, 2(%rax)
+  jne bad_exit
+  cmpb $250, 3(%rax)
+  jne bad_exit
+  cmpb $91, 4(%rax)
+  jne bad_exit
+  cmpb $2, 5(%rax)
+  jne bad_exit
+  cmpb $78, 6(%rax)
+  jne bad_exit
+  cmpb $193, 7(%rax)
+  jne bad_exit
+  cmpb $218, 8(%rax)
+  jne bad_exit
+  cmpb $171, 9(%rax)
+  jne bad_exit
+  cmpb $147, 10(%rax)
+  jne bad_exit
+  cmpb $73, 11(%rax)
+  jne bad_exit
+  cmpb $52, 12(%rax)
+  jne bad_exit
+  cmpb $130, 13(%rax)
+  jne bad_exit
+  cmpb $51, 14(%rax)
+  jne bad_exit
+  cmpb $84, 15(%rax)
+  jne bad_exit
+  cmpb $87, 16(%rax)
+  jne bad_exit
+  cmpb $182, 17(%rax)
+  jne bad_exit
+  cmpb $37, 18(%rax)
+  jne bad_exit
+  cmpb $202, 19(%rax)
+  jne bad_exit
+  cmpb $124, 20(%rax)
+  jne bad_exit
+  cmpb $108, 21(%rax)
+  jne bad_exit
+  cmpb $104, 22(%rax)
+  jne bad_exit
+  cmpb $182, 23(%rax)
+  jne bad_exit
+  cmpb $37, 24(%rax)
+  jne bad_exit
+  cmpb $115, 25(%rax)
+  jne bad_exit
+  cmpb $177, 26(%rax)
+  jne bad_exit
+  cmpb $59, 27(%rax)
+  jne bad_exit
+  cmpb $246, 28(%rax)
+  jne bad_exit
+  cmpb $206, 29(%rax)
+  jne bad_exit
+  cmpb $148, 30(%rax)
+  jne bad_exit
+  cmpb $124, 31(%rax)
+  jne bad_exit
+  cmpb $84, 32(%rax)
+  jne bad_exit
+  cmpb $240, 33(%rax)
+  jne bad_exit
+  cmpb $4, 34(%rax)
+  jne bad_exit
+  cmpb $95, 35(%rax)
+  jne bad_exit
+  cmpb $35, 36(%rax)
+  jne bad_exit
+  cmpb $20, 37(%rax)
+  jne bad_exit
+  cmpb $14, 38(%rax)
+  jne bad_exit
+  cmpb $183, 39(%rax)
+  jne bad_exit
+  cmpb $176, 40(%rax)
+  jne bad_exit
+  cmpb $179, 41(%rax)
+  jne bad_exit
+  cmpb $1, 42(%rax)
   jne bad_exit
 
   movq $60, %rax
@@ -18,9 +100,10 @@ bad_exit:
   syscall
 
 .section .data
-  num: .int -178
-  source: .byte 0
-  destination: .zero 4
+  num: .int 42
+  source: .byte 118,0,18,250,91,2,78,193,218,171,147,73,52,130,51,84,87,182,37,202,124,108,104,182
+  destination: .byte 37,115,177,59,246,206,148,124,84,240,4,95,35,20,14,183,176,179
+               .zero 24
                .byte 1
 
 
