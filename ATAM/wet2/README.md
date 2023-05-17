@@ -25,7 +25,7 @@
 
 ### notes
 - These are not our tests, these are from previous years that were rearranged and provided here for easier use 
-- We take no credit for them nor recieve or answer any complaints.
+- We take no credit for them nor answer any complaints.
 
 
 
