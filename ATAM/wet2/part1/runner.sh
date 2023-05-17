@@ -31,7 +31,7 @@ if [ -f "test_BS.out" ]; then
 			if [ $? -eq 0 ]; then
 				echo -e "BS${i}: ${GREEN}PASS!${NC}"
 			else
-				echo -e "KM${i}: ${RED}FAIL${NC}"
+				echo -e "BS${i}: ${RED}FAIL${NC}"
 			fi
 		fi
 	done
@@ -49,7 +49,7 @@ if [ -f "test_SR.out" ]; then
 			if [ $? -eq 0 ]; then
 				echo -e "SR${i}: ${GREEN}PASS!${NC}"
 			else
-				echo -e "KM${i}: ${RED}FAIL${NC}"
+				echo -e "SR${i}: ${RED}FAIL${NC}"
 			fi
 		fi
 	done
@@ -67,7 +67,7 @@ if [ -f "test_cipher.out" ]; then
 			if [ $? -eq 0 ]; then
 				echo -e "cipher${i}: ${GREEN}PASS!${NC}"
 			else
-				echo -e "KM${i}: ${RED}FAIL${NC}"
+				echo -e "cipher${i}: ${RED}FAIL${NC}"
 			fi
 		fi
 	done
