@@ -1,0 +1,6 @@
+Encrypted:
+0xc851551506579c1e62c4b7906a8ace6ec6eebd7b87dc7ddb3fbc3c2d3fcd2278efefb9ec9beb979fb04d2188d8146b4234cdbb8f0bcc5e49d59fc0f185d20e8b8c5082d549db1d7fc43c276cd63b994f
+
+Decrypted:
+void cipher(uint8_t input[][4][4], uint8_t key[4][4], uint8_t len); // try this
+
