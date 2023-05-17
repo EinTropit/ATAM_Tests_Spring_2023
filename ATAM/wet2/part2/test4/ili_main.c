@@ -15,10 +15,10 @@ char message[200] = {};
 //
 // Externals
 //
-//	ASM functions
+	//	ASM functions
 extern void my_ili_handler(void);
 
-//	C functions
+	//	C functions
 extern void my_store_idt(struct desc_ptr* idtr);
 extern void my_load_idt(struct desc_ptr* idtr);
 extern void my_set_gate_offset(gate_desc *gate, unsigned long addr);
@@ -32,19 +32,9 @@ void print(char *str) {
 }
  
 unsigned int what_to_do(unsigned char magic) {
-	asm("mov $42, %%rax;"
-            "mov $42, %%rdi;"
-            "mov $42, %%rsi;"
-            "mov $42, %%rdx;"
-            "mov $42, %%rcx;"
-            "mov $42, %%r8;"
-            "mov $42, %%r9;"
-            "mov $42, %%r10;"
-            "mov $42, %%r11;"
-        :
-        :
-        : "rax", "rdi", "rdx", "rsi", "rcx", "r8", "r9", "r10", "r11");
-	return magic-37;
+	/* This is not the greatest function in the world, no.
+	   This is just a tribute. */
+	return magic-4;
 }
 
 

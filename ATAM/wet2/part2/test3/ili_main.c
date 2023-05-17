@@ -32,6 +32,18 @@ void print(char *str) {
 }
  
 unsigned int what_to_do(unsigned char magic) {
+	asm("mov $42, %%rax;"
+            "mov $42, %%rdi;"
+            "mov $42, %%rsi;"
+            "mov $42, %%rdx;"
+            "mov $42, %%rcx;"
+            "mov $42, %%r8;"
+            "mov $42, %%r9;"
+            "mov $42, %%r10;"
+            "mov $42, %%r11;"
+        :
+        :
+        : "rax", "rdi", "rdx", "rsi", "rcx", "r8", "r9", "r10", "r11");
 	return magic-37;
 }
 
