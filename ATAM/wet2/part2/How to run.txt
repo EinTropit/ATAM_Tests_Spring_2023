@@ -1,1 +1,0 @@
-Run each test as you are instructed in the HW (with the attached compile.sh and Makefile, and each test's files, but with the start.sh and filesystem.img you already have.
