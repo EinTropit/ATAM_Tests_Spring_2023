@@ -6,10 +6,13 @@ NC='\033[0m'
 
 EXIT_STATUS=0
 
+chmod +x ./part1_runner.sh
+chmod +x ./part2_runner.sh
+
 echo "running part1 test"
 echo
-./part1_runner.sh
 echo ------------------
+./part1_runner.sh
 if [ $? -eq 0 ]; then
     echo -e "part1 test ${i}: ${GREEN}PASS${NC}"
 else
@@ -20,8 +23,8 @@ echo ------------------
 echo
 echo "running part2 test"
 echo 
-./part2_runner.sh
 echo ------------------
+./part2_runner.sh
 if [ $? -eq 0 ]; then
     echo -e "part2 test ${i}: ${GREEN}PASS${NC}"
 else
