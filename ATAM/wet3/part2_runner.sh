@@ -12,6 +12,7 @@ if [ -f "part2.exec" ]; then
     readelf -h ./part2.exec > ./part2_out_files/part2_h.out
     readelf -s part2.exec > ./part2_out_files/part2_s.out
     readelf -WS part2.exec > ./part2_out_files/part2_WS.out
+    readelf -Wl ./part2.exec > ./part2_out_files/test_12.out
 
     cat ./part2_out_files/part2_s.out | grep -ho '000000000040000c     0 NOTYPE  GLOBAL DEFAULT    3 _hw3_unicorn' > ./part2_out_files/test_1.out
     cat ./part2_out_files/part2_s.out | grep -ho '0000000000400000     0 NOTYPE  GLOBAL DEFAULT    3 _start' > ./part2_out_files/test_2.out
@@ -25,7 +26,7 @@ if [ -f "part2.exec" ]; then
     cat ./part2_out_files/part2_WS.out | grep '.bss              NOBITS          0000000000060008' | grep -ho ' 000032 00  WA  0   0  4' > ./part2_out_files/test_10.out
     cat ./part2_out_files/part2_h.out | grep 'Entry point address:' > ./part2_out_files/test_11.out
 
-    for ((i=1; i<=11; i++)); do
+    for ((i=1; i<=12; i++)); do
         diff "./part2_exp_files/test_${i}.exp" "./part2_out_files/test_${i}.out" &>/dev/null
         if [ $? -eq 0 ]; then
             echo -e "test ${i}: ${GREEN}PASS${NC}"
