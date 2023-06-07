@@ -1,0 +1,11 @@
+
+Symbol table '.symtab' contains 8 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS sources/link_test.asm
+     2: 0000000000060000     0 NOTYPE  LOCAL  DEFAULT    1 msg1
+     3: 0000000080000000     0 NOTYPE  LOCAL  DEFAULT    4 msg2
+     4: 000000000040000c     0 NOTYPE  GLOBAL DEFAULT    3 _hw3_unicorn
+     5: 0000000000400000     0 NOTYPE  GLOBAL DEFAULT    3 _start
+     6: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND purple
+     7: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND white

@@ -1,0 +1,8 @@
+_start will be loaded to 0x401000
+msg2 will be loaded to 0x402015
+msg is not a global symbol! :(
+exit is not a global symbol! :(
+Tony_and_Noam not found!
+The_One_Piece not found!
+purple is a global symbol, but will come from a shared library
+_hw3_unicorn is a global symbol, but will come from a shared library
