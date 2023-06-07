@@ -4,6 +4,7 @@ msg1:	db "Tony",4
 section .rodata
 msg2:	db "Noam",4
 
+
 section .text
     global _start
     global _hw3_unicorn
