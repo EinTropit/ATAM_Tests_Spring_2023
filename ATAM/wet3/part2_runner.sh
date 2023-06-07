@@ -9,6 +9,7 @@ EXIT_STATUS=0
 ld -T ./hw3_part2.ld -o 'part2.exec' 'link_test.o' 'link_test2.o'
 
 if [ -f "part2.exec" ]; then
+    readelf -h ./part2.exec > ./part2_out_files/part2_h.out
     readelf -s part2.exec > ./part2_out_files/part2_s.out
     readelf -WS part2.exec > ./part2_out_files/part2_WS.out
 
@@ -22,8 +23,9 @@ if [ -f "part2.exec" ]; then
     cat ./part2_out_files/part2_WS.out | grep '.text             PROGBITS        0000000000400000' | grep -ho ' 000018 00  AX  0   0 16' > ./part2_out_files/test_8.out
     cat ./part2_out_files/part2_WS.out | grep '.rodata           PROGBITS        0000000080000000' | grep -ho ' 000005 00   A  0   0  4' > ./part2_out_files/test_9.out
     cat ./part2_out_files/part2_WS.out | grep '.bss              NOBITS          0000000000060008' | grep -ho ' 000032 00  WA  0   0  4' > ./part2_out_files/test_10.out
+    cat ./part2_out_files/part2_h.out | grep 'Entry point address:' > ./part2_out_files/test_11.out
 
-    for ((i=1; i<=10; i++)); do
+    for ((i=1; i<=11; i++)); do
         diff "./part2_exp_files/test_${i}.exp" "./part2_out_files/test_${i}.out" &>/dev/null
         if [ $? -eq 0 ]; then
             echo -e "test ${i}: ${GREEN}PASS${NC}"
