@@ -9,7 +9,7 @@
   - to run one part only (insert number only): ./part#_runner.sh
 
 ### notes
-* Useable with WSL
+* part 2 does not work with WSL
 * Since no sample tests were provided by the course stuff, if you are 100% percent sure we check somethimg in the wrong way you may notify us
 * sources for the tests are available if you want them for some reason
 
