@@ -16,8 +16,8 @@ if [ -f "part1.exec" ]; then
     timeout 20s ./part1.exec exit part1_1.exec > ./part1_out_files/test_4.out
     timeout 20s ./part1.exec Tony_and_Noam part1_1.exec > ./part1_out_files/test_5.out
     timeout 20s ./part1.exec The_One_Piece part1_1.exec > ./part1_out_files/test_6.out
-    timeout 20s ./part1.exec msg2 part1_1.o > ./part1_out_files/test_7.out
-    timeout 20s ./part1.exec msg2 part1_2.o > ./part1_out_files/test_8.out
+    timeout 20s ./part1.exec msg1 part1_1.o > ./part1_out_files/test_7.out
+    timeout 20s ./part1.exec msg3 part1_2.o > ./part1_out_files/test_8.out
     timeout 20s ./part1.exec purple part1_3.exec > ./part1_out_files/test_9.out
     timeout 20s ./part1.exec _hw3_unicorn part1_3.exec > ./part1_out_files/test_10.out
     echo "running diff"
