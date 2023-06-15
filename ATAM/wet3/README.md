@@ -1,17 +1,14 @@
-# Tests for ATAM wet 3
+# Tests for ATAM wet 3 - part 1
 
 ## How to run the tests
 * Clone / Download the files from the repository
 * Put the files 'hw3_part1.c' and 'hw3_part2.ld' in the 'wet3' folder
 * Running instructions: 
   - Open a shell terminal in .../ATAM/wet3
-  - to run all tests: ./runner.sh
-  - to run one part only (insert number only): ./part#_runner.sh
+  - to run the tests: ./part1_runner.sh
 
 ### notes
-* part 2 tests may fail because of parsing and differnces between machines, if you don't pass them try checking manually with the files named ./part2_exp_files/part2_###.exp
-* part 2 does not work with WSL
-* Since no sample tests were provided by the course stuff, if you are 100% percent sure we check somethimg in the wrong way you may notify us
+* part 2 tests are not compatible with all code that is good and were removed
 * sources for the tests are available if you want them for some reason
 
 ### Troubleshooting
