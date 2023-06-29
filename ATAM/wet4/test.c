@@ -2,6 +2,8 @@
 // #include "asmtest.h"
 
 int comp(int x, int y);
+int recA(int x);
+int recB(int x, int y);
 int uselessFunc(int x);
 
 int hash(int x, int y)
@@ -40,6 +42,10 @@ int main() {
         "mov $2, %%rax;"
          : : :"rax", "rdi");
     uselessFunc(3);
+    comp(9,9);
+    recA(5);
+    recB(5, 0);
+    recA(7);
 
     return 0;
 }
