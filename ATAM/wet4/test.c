@@ -30,11 +30,11 @@ int main() {
     hash(101, 0);
     hash(11, 1);
     fact(5);
-    hash(7, 3);
+    hash(-15, 3);
     fact(0);
-    fact(3);
-    comp(3, 4);
-    comp(6, 3);
+    fact(-2);
+    comp(-1, 4);
+    comp(6, -4);
     asm("mov $8, %%rax;"
         "mov $4, %%rdi;"
         "call uselessFunc;"
