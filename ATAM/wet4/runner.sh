@@ -19,12 +19,12 @@ if [ -f "prf.exec" ]; then
     echo -e "RUNNING TESTS"
 
     # run tests
-    ./prf.exec hash        ./test.exec > ./outputs/test1.out
-    ./prf.exec fact        ./test.exec > ./outputs/test2.out
-    ./prf.exec comp        ./test.exec > ./outputs/test3.out
-    ./prf.exec uselessFunc ./test.exec > ./outputs/test4.out
-    ./prf.exec recA        ./test.exec > ./outputs/test5.out
-    ./prf.exec recB        ./test.exec > ./outputs/test6.out
+    timeout 20s ./prf.exec hash        ./test.exec > ./outputs/test1.out
+    timeout 20s ./prf.exec fact        ./test.exec > ./outputs/test2.out
+    timeout 20s ./prf.exec comp        ./test.exec > ./outputs/test3.out
+    timeout 20s ./prf.exec uselessFunc ./test.exec > ./outputs/test4.out
+    timeout 20s ./prf.exec recA        ./test.exec > ./outputs/test5.out
+    timeout 20s ./prf.exec recB        ./test.exec > ./outputs/test6.out
 
     # diff tests
     for ((i=1; i<=6; i++)); do
