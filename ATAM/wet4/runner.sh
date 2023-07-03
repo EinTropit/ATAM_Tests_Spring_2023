@@ -19,16 +19,16 @@ if [ -f "prf.exec" ]; then
     echo -e "RUNNING TESTS"
 
     # run tests
-    ./prf.exec hash        ./test.exec > ./out_files/test1.out
-    ./prf.exec fact        ./test.exec > ./out_files/test2.out
-    ./prf.exec comp        ./test.exec > ./out_files/test3.out
-    ./prf.exec uselessFunc ./test.exec > ./out_files/test4.out
-    ./prf.exec recA        ./test.exec > ./out_files/test5.out
-    ./prf.exec recB        ./test.exec > ./out_files/test6.out
+    ./prf.exec hash        ./test.exec > ./outputs/test1.out
+    ./prf.exec fact        ./test.exec > ./outputs/test2.out
+    ./prf.exec comp        ./test.exec > ./outputs/test3.out
+    ./prf.exec uselessFunc ./test.exec > ./outputs/test4.out
+    ./prf.exec recA        ./test.exec > ./outputs/test5.out
+    ./prf.exec recB        ./test.exec > ./outputs/test6.out
 
     # diff tests
     for ((i=1; i<=6; i++)); do
-        diff "./exp_files/test${i}.exp" "./out_files/test${i}.out" &>/dev/null
+        diff "./expected/test${i}.exp" "./outputs/test${i}.out" &>/dev/null
         if [ $? -eq 0 ]; then
             echo -e "test ${i}: ${GREEN}PASS${NC}"
         else
