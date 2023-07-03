@@ -8,6 +8,7 @@
   - to run all tests: ./runner.sh
 
 ### notes
+* IMPORTANT - we do not check any case that was already tested in WET3 
 * no individual test running provided
 * should work with WSL
 * Since no sample tests were provided by the course stuff, if you are 100% percent sure we check somethimg in the wrong way you may notify us
