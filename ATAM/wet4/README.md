@@ -4,7 +4,7 @@
 * Clone / Download the files from the repository
 * Put the all your code *excluding elf64.h* files in the 'wet4/your_files' folder
 * Running instructions: 
-  - Open a shell terminal in .../ATAM/wet3
+  - Open a shell terminal in .../ATAM/wet4
   - to run all tests: ./runner.sh
 
 ### notes
@@ -16,7 +16,7 @@
 * we compile and add a dynamic library to /usr/lib/ - note that it will stay on your computer if you use WSL
 
 ### Troubleshooting
-* if you fail a test and the files are identical run: dos2unix "filepath"
+* if you fail a test and the files are identical execute: dos2unix "filepath"
 * If the premission is denied execute: chmod +x "filename"
 * If you get the following message:
   - /bin/bash^M: bad interpreter: No such file or directory
