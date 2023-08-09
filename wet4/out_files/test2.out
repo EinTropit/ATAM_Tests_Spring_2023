@@ -1,0 +1,6 @@
+PRF:: run #1 first parameter is 5
+PRF:: run #1 returned with 120
+PRF:: run #2 first parameter is 0
+PRF:: run #2 returned with 1
+PRF:: run #3 first parameter is -2
+PRF:: run #3 returned with -1
